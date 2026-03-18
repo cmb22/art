@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import { getPaintingBySlug } from "@/data/paintings"
 import styles from "./painting.module.css"
 
-export const PaintingPage = async ({
+const PaintingPage = async ({
   params
 }: {
   params: Promise<{ slug: string }>
@@ -11,6 +11,19 @@ export const PaintingPage = async ({
   const painting = getPaintingBySlug(slug)
 
   if (!painting) return notFound()
+
+  const subject = encodeURIComponent(`Enquiry about "${painting.title}"`)
+  const body = encodeURIComponent(
+    `Hello,
+
+I'm interested in "${painting.title}" (${painting.price}).
+
+Please let me know if it is still available and what the shipping options would be.
+
+Best regards`
+  )
+
+  const mailto = `mailto:chrismblyth@gmail.com?subject=${subject}&body=${body}`
 
   return (
     <main className={styles.page}>
@@ -33,13 +46,8 @@ export const PaintingPage = async ({
           <p className={styles.note}>{painting.note}</p>
         )}
 
-        {painting.paypalUrl && painting.status === "available" && (
-          <a
-            href={painting.paypalUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.buyButton}
-          >
+        {painting.status === "available" && (
+          <a href={mailto} className={styles.buyButton}>
             Acquire
           </a>
         )}
