@@ -1,3 +1,5 @@
+import { Slabo_13px } from "next/font/google"
+
 export const paintings = [
   {
     slug: "1",
@@ -85,6 +87,17 @@ export const paintings = [
       "/paintings/alfrednobeldreams/alfrednobeldreams.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/250",
+    note: "Acrylic on canvas. 59,5 x 42cm"
+  },
+  {
+    slug: "9",
+    title: "The Unknown Painter",
+    price: "€350",
+    status: "available",
+    images: [
+      "/paintings/theunknownpainter/theunknownpainter.jpg"
+    ],
+    paypalUrl: "https://paypal.me/chrismblyth/350",
     note: "Acrylic on canvas. 59,5 x 42cm"
   }
 ]
