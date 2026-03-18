@@ -64,6 +64,28 @@ export const paintings = [
     ],
     paypalUrl: "https://paypal.me/chrismblyth/350",
     note: "An abstract expressionist piece exploring texture and colour."
+  },
+  {
+    slug: "7",
+    title: "L'éclair",
+    price: "€250",
+    status: "available",
+    images: [
+      "/paintings/leclair/leclair.jpg"
+    ],
+    paypalUrl: "https://paypal.me/chrismblyth/250",
+    note: "Reminders of lightning."
+  },
+  {
+    slug: "8",
+    title: "Alfred Nobel Dreams",
+    price: "€250",
+    status: "available",
+    images: [
+      "/paintings/alfrednobeldreams/alfrednobeldreams.jpg"
+    ],
+    paypalUrl: "https://paypal.me/chrismblyth/250",
+    note: "A surreal landscape with intricate geometric patterns and vibrant colours."
   }
 ]
 
