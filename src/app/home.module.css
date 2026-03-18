@@ -1,35 +1,88 @@
+/* src/app/home.module.css */
 .page {
-    padding: 40px;
-    max-width: 1200px;
+    /* padding: 0px 20px; */
+    max-width: 1400px;
     margin: 0 auto;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 32px 24px;
-    align-items: start;
+/* INTRO */
+
+.intro {
+    margin-bottom: 32px;
+    border-bottom: 2px solid black;
 }
 
-.card {
+.heading {
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+
+/* GRID */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 22px;
+}
+
+/* ITEM */
+
+.item {
     display: block;
     text-decoration: none;
     color: inherit;
+    transition: opacity 0.2s ease;
 }
+
+/* .item:hover {
+    opacity: 0.85;
+} */
+
+/* IMAGE */
 
 .image {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    background: #ece7de;
+    height: 260px;
+    /* <- feste Höhe */
+    object-fit: cover;
+    /* <- wichtig */
+    display: block;
 }
 
+/* META */
+
 .meta {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    margin-top: 10px;
-    padding-top: 10px;
-    font-size: 14px;
-    border-top: 1px solid rgba(17, 17, 17, 0.12);
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.title {
+    display: block;
+}
+
+.price {
+    display: block;
+    color: #777;
+    margin-top: 2px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page {
+        padding: 24px 16px;
+    }
 }

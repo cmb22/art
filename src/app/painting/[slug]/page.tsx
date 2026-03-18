@@ -26,37 +26,43 @@ Best regards`
   const mailto = `mailto:chrismblyth@gmail.com?subject=${subject}&body=${body}`
 
   return (
-    <main className={styles.page}>
-      <div className={styles.gallery}>
-        {painting.images.map((img) => (
-          <img
-            key={img}
-            src={img}
-            alt={painting.title}
-            className={styles.image}
-          />
-        ))}
-      </div>
+    <>
+      <section className={styles.intro}>
+        <h1 className={styles.heading}>{painting.title}</h1>
+      </section>
+      <main className={styles.page}>
 
-      <div className={styles.meta}>
-        <h1 className={styles.title}>{painting.title}</h1>
-        <p className={styles.price}>{painting.price}</p>
+        <div className={styles.gallery}>
+          {painting.images.map((img) => (
+            <img
+              key={img}
+              src={img}
+              alt={painting.title}
+              className={styles.image}
+            />
+          ))}
+        </div>
 
-        {painting.note && (
-          <p className={styles.note}>{painting.note}</p>
-        )}
+        <div className={styles.meta}>
 
-        {painting.status === "available" && (
-          <a href={mailto} className={styles.buyButton}>
-            Acquire
-          </a>
-        )}
+          <p className={styles.price}>{painting.price}</p>
 
-        {painting.status === "sold" && (
-          <p className={styles.sold}>Sold</p>
-        )}
-      </div>
-    </main>
+          {painting.note && (
+            <p className={styles.note}>{painting.note}</p>
+          )}
+
+          {painting.status === "available" && (
+            <a href={mailto} className={styles.buyButton}>
+              Acquire
+            </a>
+          )}
+
+          {painting.status === "sold" && (
+            <p className={styles.sold}>Sold</p>
+          )}
+        </div>
+      </main>
+    </>
   )
 }
 

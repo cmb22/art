@@ -1,0 +1,76 @@
+.siteShell {
+    min-height: 100vh;
+}
+
+.siteHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* gap: 24px; */
+    padding: 18px 0 8px 0;
+}
+
+.siteBrand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.siteTitleLink {
+    display: block;
+    width: 100%;
+}
+
+.siteTitle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    letter-spacing: -0.055em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+.siteNav {
+    display: flex;
+    gap: 20px;
+    padding-top: 8px;
+    width: 100%;
+}
+
+.siteNav a {
+    color: black;
+    font-weight: 700;
+}
+
+.siteLink {
+    line-height: 1;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: black;
+}
+
+.siteDivider {
+    height: 2px;
+    background: black;
+}
+
+.footer {
+    min-height: 40px;
+    border-top: 2px solid black;
+}
+
+.footerInner {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #555;
+}
+
+@media (max-width: 1350px) {
+    .siteShell {
+        padding: 0 30px;
+    }
+}

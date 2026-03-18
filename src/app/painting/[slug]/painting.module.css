@@ -4,6 +4,18 @@
     padding: 40px;
 }
 
+.intro {
+    margin-bottom: 32px;
+    border-bottom: 2px solid black;
+}
+
+.heading {
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+
 .gallery {
     display: grid;
     gap: 20px;
