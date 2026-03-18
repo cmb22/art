@@ -58,6 +58,7 @@
 }
 
 .footer {
+    margin-top: 40px;
     min-height: 40px;
     border-top: 2px solid black;
 }
