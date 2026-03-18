@@ -8,7 +8,7 @@ export const paintings = [
       "/paintings/storm/storm.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/575",
-    note: "Acrylic on canvas. A darker, more turbulent composition with strong directional movement."
+    note: "Acrylic on canvas. 59,5 x 42cm"
   },
   {
     slug: "2",
@@ -19,7 +19,7 @@ export const paintings = [
       "/paintings/hallucinationsatdawn/hallucinationsatdawn.jpeg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/230",
-    note: "Soft colour transitions suggesting a dreamlike early morning atmosphere."
+    note: "Acrylic on canvas. 60 x 42cm"
   },
   {
     slug: "3",
@@ -30,7 +30,7 @@ export const paintings = [
       "/paintings/crossroads/crossroads.jpeg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/200",
-    note: "An abstract exploration of direction, tension and intersecting paths."
+    note: "Acrylic on canvas. 59,5 x 42cm"
   },
   {
     slug: "4",
@@ -41,7 +41,7 @@ export const paintings = [
       "/paintings/nightfishing/nightfishing.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/200",
-    note: "Light, airy composition with soft pastel tones evoking a sense of otherworldliness."
+    note: "Acrylic on canvas. 59,5 x 42cm"
   },
   {
     slug: "5",
@@ -52,7 +52,7 @@ export const paintings = [
       "/paintings/lesyeux/lesyeux.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/275",
-    note: "A blend of geometric shapes and vibrant colours creating a surreal cityscape."
+    note: "Acrylic on canvas. 59,5 x 42cm"
   },
   {
     slug: "6",
@@ -63,18 +63,18 @@ export const paintings = [
       "/paintings/portraitoftheuniverse/portraitoftheuniverse.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/350",
-    note: "An abstract expressionist piece exploring texture and colour."
+    note: "Acrylic on canvas. 59,5 x 42cm"
   },
   {
     slug: "7",
-    title: "L'éclair",
+    title: "Souvenirs d’éclairs",
     price: "€250",
     status: "available",
     images: [
       "/paintings/leclair/leclair.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/250",
-    note: "Reminders of lightning."
+    note: "Reminders of lightning. Acrylic on canvas. 59,5 x 42cm"
   },
   {
     slug: "8",
@@ -85,7 +85,7 @@ export const paintings = [
       "/paintings/alfrednobeldreams/alfrednobeldreams.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/250",
-    note: "A surreal landscape with intricate geometric patterns and vibrant colours."
+    note: "Acrylic on canvas. 59,5 x 42cm"
   }
 ]
 
