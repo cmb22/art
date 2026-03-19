@@ -75,3 +75,9 @@
     font-size: 14px;
     color: #777;
 }
+
+@media (max-width: 630px) {
+    .page {
+        padding: 0px;
+    }
+}
