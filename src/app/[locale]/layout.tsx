@@ -3,8 +3,8 @@ import { notFound } from "next/navigation"
 import { isLocale, locales } from "@/app/i18n/config"
 import { messages } from "@/app/i18n/messages"
 import Link from "next/link"
-import FitTitle from "@/app/components/FitTitle"
 import { LocaleSwitch } from "@/app/components/LocaleSwitch"
+import { LogoTitle } from "@/app/components/LogoTitle"
 import styles from "./layout.module.css"
 
 export const generateStaticParams = () => {
@@ -31,13 +31,13 @@ const LocaleLayout = async ({
             <div className={styles.siteShell}>
                 <header className={styles.siteHeader}>
                     <div className={styles.siteBrand}>
-                        <Link href={`/${locale}`} className={styles.siteTitle}>
-                            <FitTitle
-                                text="CHRIS M BLYTH"
-                                className={styles.siteTitle}
-                                minSize={42}
-                                maxSize={220}
-                            />
+                        <Link href={`/${locale}`} className={styles.siteTitleLink}>
+                            {/* <img
+                                src="/chris-m-blyth.svg"
+                                alt="Chris M Blyth"
+                                className={styles.siteTitleImage}
+                            /> */}
+                            <LogoTitle />
                         </Link>
 
                         <nav className={styles.siteNav}>
@@ -56,7 +56,6 @@ const LocaleLayout = async ({
                             <div className={styles.localeSwitch}>
                                 <LocaleSwitch />
                             </div>
-
                         </nav>
                     </div>
                 </header>
@@ -65,10 +64,10 @@ const LocaleLayout = async ({
 
                 {children}
             </div>
+
             <footer className={styles.footer}>
                 <div className={styles.footerInner}>
                     <span>Chris M Blyth</span>
-
                     <span>{new Date().getFullYear()}</span>
                 </div>
             </footer>

@@ -12,12 +12,7 @@
     border-bottom: 2px solid black;
 }
 
-.heading {
-    font-size: 3rem;
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-}
+
 
 /* GRID */
 
@@ -82,9 +77,5 @@
 @media (max-width: 600px) {
     .grid {
         grid-template-columns: 1fr;
-    }
-
-    .page {
-        padding: 24px 16px;
     }
 }

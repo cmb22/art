@@ -21,6 +21,7 @@ const AboutPage = async ({
         <>
             <section className={styles.intro}>
                 <h1 className={styles.heading}>{t.about.heading}</h1>
+
             </section>
 
             <main className={styles.page}>

@@ -5,6 +5,7 @@ import { isLocale } from "@/app/i18n/config"
 import { messages } from "@/app/i18n/messages"
 import { notFound } from "next/navigation"
 import styles from "./home.module.css"
+import layoutStyles from "./layout.module.css"
 
 const Home = async ({
   params
@@ -22,7 +23,7 @@ const Home = async ({
   return (
     <main className={styles.page}>
       <section className={styles.intro}>
-        <h1 className={styles.heading}>{t.home.heading}</h1>
+        <h1 className={layoutStyles.heading}>{t.home.heading}</h1>
       </section>
 
       <section className={styles.grid}>

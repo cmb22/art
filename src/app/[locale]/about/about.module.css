@@ -6,8 +6,13 @@
 
 .intro {
     margin-bottom: 32px;
-    border-bottom: 2px solid black;
+    border-bottom: 2.5px solid black;
 }
+
+/* .siteDivider {
+    height: 2px;
+    background: black;
+} */
 
 .heading {
     font-size: 3rem;
