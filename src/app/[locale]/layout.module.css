@@ -163,6 +163,10 @@
     .siteNav a {
         font-size: 14px;
     }
+
+    .heading {
+        font-size: 30px;
+    }
 }
 
 @media (max-width: 550px) {

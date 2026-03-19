@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { isLocale } from "@/app/i18n/config"
 import { messages } from "@/app/i18n/messages"
 import styles from "./shipping.module.css"
+import layoutStyles from "@/app/[locale]/layout.module.css"
 
 const ShippingPage = async ({
     params
@@ -20,7 +21,7 @@ const ShippingPage = async ({
     return (
         <main className={styles.page}>
             <section className={styles.intro}>
-                <h1 className={styles.heading}>{t.shipping.heading}</h1>
+                <h1 className={layoutStyles.heading}>{t.shipping.heading}</h1>
             </section>
 
             <section className={styles.content}>

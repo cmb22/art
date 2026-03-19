@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { isLocale } from "@/app/i18n/config"
 import { messages } from "@/app/i18n/messages"
 import styles from "./contact.module.css"
+import layoutStyles from "@/app/[locale]/layout.module.css"
 
 const ContactPage = async ({
     params
@@ -20,7 +21,7 @@ const ContactPage = async ({
     return (
         <main className={styles.page}>
             <section className={styles.intro}>
-                <h1 className={styles.heading}>{t.contact.heading}</h1>
+                <h1 className={layoutStyles.heading}>{t.contact.heading}</h1>
             </section>
 
             <section className={styles.content}>

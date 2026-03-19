@@ -5,6 +5,7 @@ import { getPaintingBySlug } from "@/data/paintings"
 import { isLocale } from "@/app/i18n/config"
 import { messages } from "@/app/i18n/messages"
 import styles from "./painting.module.css"
+import layoutStyles from "@/app/[locale]/layout.module.css"
 
 const PaintingPage = async ({
   params
@@ -40,7 +41,7 @@ const PaintingPage = async ({
   return (
     <>
       <section className={styles.intro}>
-        <h1 className={styles.heading}>{painting.title}</h1>
+        <h1 className={layoutStyles.heading}>{painting.title}</h1>
       </section>
 
       <main className={styles.page}>
