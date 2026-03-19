@@ -1,8 +1,6 @@
-import { Slabo_13px } from "next/font/google"
-
 export const paintings = [
   {
-    slug: "1",
+    slug: "storm",
     title: "Storm",
     price: "€575",
     status: "available",
@@ -13,7 +11,7 @@ export const paintings = [
     note: "Acrylic on canvas. 59,5 x 42cm"
   },
   {
-    slug: "2",
+    slug: "hallucinations-at-dawn",
     title: "Hallucinations at Dawn",
     price: "€230",
     status: "available",
@@ -24,7 +22,7 @@ export const paintings = [
     note: "Acrylic on canvas. 60 x 42cm"
   },
   {
-    slug: "3",
+    slug: "crossroads",
     title: "Crossroads",
     price: "€200",
     status: "available",
@@ -35,7 +33,7 @@ export const paintings = [
     note: "Acrylic on canvas. 59,5 x 42cm"
   },
   {
-    slug: "4",
+    slug: "fishing-by-night",
     title: "Fishing by night",
     price: "€200",
     status: "available",
@@ -46,7 +44,7 @@ export const paintings = [
     note: "Acrylic on canvas. 59,5 x 42cm"
   },
   {
-    slug: "5",
+    slug: "les-yeux",
     title: "Les Yeux",
     price: "€275",
     status: "available",
@@ -57,7 +55,7 @@ export const paintings = [
     note: "Acrylic on canvas. 59,5 x 42cm"
   },
   {
-    slug: "6",
+    slug: "portrait-of-the-universe",
     title: "Portrait of the Universe",
     price: "€350",
     status: "available",
@@ -68,7 +66,7 @@ export const paintings = [
     note: "Acrylic on canvas. 59,5 x 42cm"
   },
   {
-    slug: "7",
+    slug: "souvenirs-declairs",
     title: "Souvenirs d’éclairs",
     price: "€250",
     status: "available",
@@ -79,7 +77,7 @@ export const paintings = [
     note: "Reminders of lightning. Acrylic on canvas. 59,5 x 42cm"
   },
   {
-    slug: "8",
+    slug: "alfred-nobel-dreams",
     title: "Alfred Nobel Dreams",
     price: "€250",
     status: "available",
@@ -90,7 +88,7 @@ export const paintings = [
     note: "Acrylic on canvas. 59,5 x 42cm"
   },
   {
-    slug: "9",
+    slug: "the-unknown-painter",
     title: "The Unknown Painter",
     price: "€350",
     status: "available",
