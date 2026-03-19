@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "tsc": "tsc"
   },
   "dependencies": {
     "next": "16.1.7",
@@ -19,6 +20,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.7",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   }
 }

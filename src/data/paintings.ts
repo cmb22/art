@@ -1,4 +1,22 @@
-export const paintings = [
+// src/data/paintings.ts
+
+type LocaleNote = {
+  en: string
+  de: string
+  fr: string
+}
+
+type Painting = {
+  slug: string
+  title: string
+  price: string
+  status: "available" | "sold"
+  images: string[]
+  paypalUrl: string
+  note: LocaleNote
+}
+
+export const paintings: Painting[] = [
   {
     slug: "storm",
     title: "Storm",
@@ -8,7 +26,11 @@ export const paintings = [
       "/paintings/storm/storm.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/575",
-    note: "Acrylic on canvas. 59,5 x 42cm"
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
   },
   {
     slug: "hallucinations-at-dawn",
@@ -19,7 +41,11 @@ export const paintings = [
       "/paintings/hallucinationsatdawn/hallucinationsatdawn.jpeg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/230",
-    note: "Acrylic on canvas. 60 x 42cm"
+    note: {
+      en: "Acrylic on canvas. 60 x 42 cm",
+      de: "Acryl auf Leinwand. 60 x 42 cm",
+      fr: "Acrylique sur toile. 60 x 42 cm"
+    }
   },
   {
     slug: "crossroads",
@@ -30,7 +56,11 @@ export const paintings = [
       "/paintings/crossroads/crossroads.jpeg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/200",
-    note: "Acrylic on canvas. 59,5 x 42cm"
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
   },
   {
     slug: "fishing-by-night",
@@ -41,7 +71,11 @@ export const paintings = [
       "/paintings/nightfishing/nightfishing.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/200",
-    note: "Acrylic on canvas. 59,5 x 42cm"
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
   },
   {
     slug: "les-yeux",
@@ -52,7 +86,11 @@ export const paintings = [
       "/paintings/lesyeux/lesyeux.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/275",
-    note: "Acrylic on canvas. 59,5 x 42cm"
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
   },
   {
     slug: "portrait-of-the-universe",
@@ -63,7 +101,11 @@ export const paintings = [
       "/paintings/portraitoftheuniverse/portraitoftheuniverse.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/350",
-    note: "Acrylic on canvas. 59,5 x 42cm"
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
   },
   {
     slug: "souvenirs-declairs",
@@ -74,7 +116,11 @@ export const paintings = [
       "/paintings/leclair/leclair.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/250",
-    note: "Reminders of lightning. Acrylic on canvas. 59,5 x 42cm"
+    note: {
+      en: "Reminders of lightning. Acrylic on canvas. 59,5 x 42 cm",
+      de: "Erinnerungen an Blitze. Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Souvenirs d’éclairs. Acrylique sur toile. 59,5 x 42 cm"
+    }
   },
   {
     slug: "alfred-nobel-dreams",
@@ -85,7 +131,11 @@ export const paintings = [
       "/paintings/alfrednobeldreams/alfrednobeldreams.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/250",
-    note: "Acrylic on canvas. 59,5 x 42cm"
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
   },
   {
     slug: "the-unknown-painter",
@@ -96,7 +146,11 @@ export const paintings = [
       "/paintings/theunknownpainter/theunknownpainter.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/350",
-    note: "Acrylic on canvas. 59,5 x 42cm"
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
   }
 ]
 

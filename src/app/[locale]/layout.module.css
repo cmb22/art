@@ -1,5 +1,5 @@
 .siteShell {
-    min-height: 100vh;
+    min-height: 94vh;
 }
 
 .siteHeader {
@@ -43,6 +43,15 @@
 .siteNav a {
     color: black;
     font-weight: 700;
+}
+
+.firstNav {
+    display: flex;
+    gap: 8px;
+}
+
+.localeSwitch {
+    margin-left: auto;
 }
 
 .siteLink {

@@ -1,0 +1,19 @@
+.localeSwitch {
+    display: flex;
+    gap: 8px;
+}
+
+.localeSwitch a {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.localeSwitch a:hover {
+    opacity: 0.5;
+}
+
+/* ACTIVE */
+.active {
+    opacity: 0.5;
+}

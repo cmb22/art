@@ -1,0 +1,52 @@
+// src/app/page.tsx
+import Link from "next/link"
+import { paintings } from "@/data/paintings"
+import { isLocale } from "@/app/i18n/config"
+import { messages } from "@/app/i18n/messages"
+import { notFound } from "next/navigation"
+import styles from "./home.module.css"
+
+const Home = async ({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}) => {
+  const { locale } = await params
+
+  if (!isLocale(locale)) {
+    notFound()
+  }
+
+  const t = messages[locale]
+
+  return (
+    <main className={styles.page}>
+      <section className={styles.intro}>
+        <h1 className={styles.heading}>{t.home.heading}</h1>
+      </section>
+
+      <section className={styles.grid}>
+        {paintings.map((painting) => (
+          <Link
+            key={painting.slug}
+            href={`/${locale}/painting/${painting.slug}`}
+            className={styles.item}
+          >
+            <img
+              src={painting.images[0]}
+              alt={painting.title}
+              className={styles.image}
+            />
+
+            <div className={styles.meta}>
+              <span className={styles.title}>{painting.title}</span>
+              <span className={styles.price}>{painting.price}</span>
+            </div>
+          </Link>
+        ))}
+      </section>
+    </main>
+  )
+}
+
+export default Home

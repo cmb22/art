@@ -1,24 +1,36 @@
+// src/app/[locale]/about/page.tsx
+import { notFound } from "next/navigation"
+import { isLocale } from "@/app/i18n/config"
+import { messages } from "@/app/i18n/messages"
 import styles from "./about.module.css"
 
-const AboutPage = () => {
+const AboutPage = async ({
+    params
+}: {
+    params: Promise<{ locale: string }>
+}) => {
+    const { locale } = await params
+
+    if (!isLocale(locale)) {
+        notFound()
+    }
+
+    const t = messages[locale]
+
     return (
         <>
             <section className={styles.intro}>
-                <h1 className={styles.heading}>About</h1>
+                <h1 className={styles.heading}>{t.about.heading}</h1>
             </section>
+
             <main className={styles.page}>
                 <div className={styles.content}>
-
-
                     <p className={styles.text}>
-                        Christopher Blyth is a Berlin-based artist and musician. His paintings
-                        focus on abstraction, movement and atmosphere, with an emphasis on
-                        spontaneity, texture and emotional tension.
+                        {t.about.p1}
                     </p>
 
                     <p className={styles.text}>
-                        Alongside painting, he also writes and records music with his music project Lunar Space Tapes. A selection of
-                        of work can be found on SoundCloud.
+                        {t.about.p2}
                     </p>
 
                     <div className={styles.links}>
@@ -28,7 +40,7 @@ const AboutPage = () => {
                             rel="noopener noreferrer"
                             className={styles.link}
                         >
-                            LUNAR SPACE TAPES ON SOUNDCLOUD
+                            {t.about.soundcloud}
                         </a>
                     </div>
                 </div>
