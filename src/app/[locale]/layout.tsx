@@ -1,3 +1,6 @@
+// src/app/[locale]/layout.tsx
+
+import type { Metadata } from "next"
 import type { ReactNode } from "react"
 import { notFound } from "next/navigation"
 import { isLocale, locales } from "@/app/i18n/config"
@@ -9,6 +12,45 @@ import styles from "./layout.module.css"
 
 export const generateStaticParams = () => {
     return locales.map((locale) => ({ locale }))
+}
+
+
+
+export const generateMetadata = async ({
+    params
+}: {
+    params: Promise<{ locale: string }>
+}): Promise<Metadata> => {
+    const { locale } = await params
+
+    if (!isLocale(locale)) {
+        return {}
+    }
+
+    const titleByLocale = {
+        en: "Art Gallery",
+        de: "Kunstgalerie",
+        fr: "Galerie d’art"
+    }
+
+    const descriptionByLocale = {
+        en: "Multilingual portfolio website featuring abstract paintings by Chris M Blyth.",
+        de: "Mehrsprachige Portfolio-Website mit abstrakten Gemälden von Chris M Blyth.",
+        fr: "Site portfolio multilingue présentant les peintures abstraites de Chris M Blyth."
+    }
+
+    return {
+        title: titleByLocale[locale],
+        description: descriptionByLocale[locale],
+        alternates: {
+            canonical: `/${locale}`,
+            languages: {
+                en: "/en",
+                de: "/de",
+                fr: "/fr"
+            }
+        }
+    }
 }
 
 const LocaleLayout = async ({
@@ -32,11 +74,6 @@ const LocaleLayout = async ({
                 <header className={styles.siteHeader}>
                     <div className={styles.siteBrand}>
                         <Link href={`/${locale}`} className={styles.siteTitleLink}>
-                            {/* <img
-                                src="/chris-m-blyth.svg"
-                                alt="Chris M Blyth"
-                                className={styles.siteTitleImage}
-                            /> */}
                             <LogoTitle />
                         </Link>
 

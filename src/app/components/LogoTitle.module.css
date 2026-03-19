@@ -1,0 +1,32 @@
+/* src/app/components/LogoTitle.module.css */
+
+.logoWrap {
+    margin: 0;
+    width: 100%;
+}
+
+.logoSvg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.logoText {
+    font-family: "Vend Sans", sans-serif;
+    font-size: 180px;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+}
+
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

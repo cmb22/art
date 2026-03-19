@@ -1,31 +1,28 @@
+// src/app/components/LogoTitle.tsx
+
+import styles from "./LogoTitle.module.css"
+
 export const LogoTitle = () => {
     return (
-        <div style={{ position: "relative", width: "100%" }}>
-            <h1 className="srOnly">Chris M Blyth</h1>
-
+        <h1 className={styles.logoWrap}>
             <svg
                 viewBox="0 0 1280 180"
-                aria-hidden="true"
+                aria-label="Chris M Blyth"
                 xmlns="http://www.w3.org/2000/svg"
-                style={{ display: "block", width: "100%", height: "auto" }}
+                className={styles.logoSvg}
+                preserveAspectRatio="xMinYMid meet"
             >
                 <text
-                    x="0"
+                    x="-6"
                     y="145"
-                    textLength="1280"
+                    textLength="1292"
                     lengthAdjust="spacingAndGlyphs"
-                    style={{
-                        fontFamily: '"Vend Sans", sans-serif',
-                        fontSize: 180,
-                        fontWeight: 700,
-                        textTransform: "uppercase",
-                        letterSpacing: "-0.06em"
-                    }}
+                    className={styles.logoText}
                 >
                     CHRIS M BLYTH
                 </text>
             </svg>
-        </div>
+        </h1>
     )
 }
 

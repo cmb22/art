@@ -1,11 +1,52 @@
 // src/app/[locale]/painting/[slug]/page.tsx
 
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getPaintingBySlug } from "@/data/paintings"
 import { isLocale } from "@/app/i18n/config"
 import { messages } from "@/app/i18n/messages"
 import styles from "./painting.module.css"
 import layoutStyles from "@/app/[locale]/layout.module.css"
+
+export const generateMetadata = async ({
+  params
+}: {
+  params: Promise<{ locale: string; slug: string }>
+}): Promise<Metadata> => {
+  const { locale, slug } = await params
+
+  if (!isLocale(locale)) {
+    return {}
+  }
+
+  const painting = getPaintingBySlug(slug)
+
+  if (!painting) {
+    return {}
+  }
+
+  return {
+    title: painting.title,
+    description: painting.note?.[locale] ?? painting.title,
+    alternates: {
+      canonical: `/${locale}/painting/${painting.slug}`,
+      languages: {
+        en: `/en/painting/${painting.slug}`,
+        de: `/de/painting/${painting.slug}`,
+        fr: `/fr/painting/${painting.slug}`
+      }
+    },
+    openGraph: {
+      title: painting.title,
+      description: painting.note?.[locale] ?? painting.title,
+      images: [
+        {
+          url: painting.images[0]
+        }
+      ]
+    }
+  }
+}
 
 const PaintingPage = async ({
   params
