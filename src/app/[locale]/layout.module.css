@@ -22,15 +22,6 @@
     width: 100%;
 }
 
-/* .siteTitle {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    letter-spacing: -0.055em;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin: 0 auto;
-} */
 .siteTitle {
     display: flex;
     width: 100%;

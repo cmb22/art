@@ -8,13 +8,12 @@ import { messages } from "@/app/i18n/messages"
 import Link from "next/link"
 import { LocaleSwitch } from "@/app/components/LocaleSwitch"
 import { LogoTitle } from "@/app/components/LogoTitle"
+import { MainNav } from "@/app/components/MainNav"
 import styles from "./layout.module.css"
 
 export const generateStaticParams = () => {
     return locales.map((locale) => ({ locale }))
 }
-
-
 
 export const generateMetadata = async ({
     params
@@ -27,21 +26,27 @@ export const generateMetadata = async ({
         return {}
     }
 
-    const titleByLocale = {
-        en: "Art Gallery",
-        de: "Kunstgalerie",
-        fr: "Galerie d’art"
-    }
-
-    const descriptionByLocale = {
-        en: "Multilingual portfolio website featuring abstract paintings by Chris M Blyth.",
-        de: "Mehrsprachige Portfolio-Website mit abstrakten Gemälden von Chris M Blyth.",
-        fr: "Site portfolio multilingue présentant les peintures abstraites de Chris M Blyth."
-    }
+    const metadataByLocale = {
+        en: {
+            title: "Chris M Blyth – Abstract Paintings",
+            description:
+                "Original abstract paintings by Chris M Blyth. Acrylic on canvas. View available works and enquire directly."
+        },
+        de: {
+            title: "Chris M Blyth – Abstrakte Gemälde",
+            description:
+                "Originale abstrakte Gemälde von Chris M Blyth. Acryl auf Leinwand. Verfügbare Werke ansehen und direkt anfragen."
+        },
+        fr: {
+            title: "Chris M Blyth – Peintures abstraites",
+            description:
+                "Peintures abstraites originales de Chris M Blyth. Acrylique sur toile. Voir les œuvres disponibles et faire une demande."
+        }
+    } as const
 
     return {
-        title: titleByLocale[locale],
-        description: descriptionByLocale[locale],
+        title: metadataByLocale[locale].title,
+        description: metadataByLocale[locale].description,
         alternates: {
             canonical: `/${locale}`,
             languages: {
@@ -49,6 +54,13 @@ export const generateMetadata = async ({
                 de: "/de",
                 fr: "/fr"
             }
+        },
+        openGraph: {
+            title: metadataByLocale[locale].title,
+            description: metadataByLocale[locale].description,
+            url: `https://www.chrismblyth.com/${locale}`,
+            siteName: "Chris M Blyth",
+            type: "website"
         }
     }
 }
@@ -79,15 +91,15 @@ const LocaleLayout = async ({
 
                         <nav className={styles.siteNav}>
                             <div className={styles.firstNav}>
-                                <Link href={`/${locale}/about`} className={styles.siteLink}>
+                                <MainNav href={`/${locale}/about`}>
                                     {t.nav.about}
-                                </Link>
-                                <Link href={`/${locale}/shipping`} className={styles.siteLink}>
+                                </MainNav>
+                                <MainNav href={`/${locale}/shipping`}>
                                     {t.nav.shipping}
-                                </Link>
-                                <Link href={`/${locale}/contact`} className={styles.siteLink}>
+                                </MainNav>
+                                <MainNav href={`/${locale}/contact`}>
                                     {t.nav.contact}
-                                </Link>
+                                </MainNav>
                             </div>
 
                             <div className={styles.localeSwitch}>
