@@ -1,6 +1,7 @@
 // src/app/[locale]/painting/[slug]/page.tsx
 
 import type { Metadata } from "next"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 import { getPaintingBySlug } from "@/data/paintings"
 import { isLocale } from "@/app/i18n/config"
@@ -87,12 +88,16 @@ const PaintingPage = async ({
 
       <main className={styles.page}>
         <div className={styles.gallery}>
-          {painting.images.map((img) => (
-            <img
+          {painting.images.map((img, index) => (
+            <Image
               key={img}
               src={img}
               alt={painting.title}
+              width={1600}
+              height={1200}
               className={styles.image}
+              sizes="(max-width: 900px) 100vw, 1200px"
+              priority={index === 0}
             />
           ))}
         </div>

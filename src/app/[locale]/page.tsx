@@ -1,4 +1,5 @@
-// src/app/page.tsx
+// src/app/[locale]/page.tsx
+import Image from "next/image"
 import Link from "next/link"
 import { paintings } from "@/data/paintings"
 import { isLocale } from "@/app/i18n/config"
@@ -27,16 +28,20 @@ const Home = async ({
       </section>
 
       <section className={styles.grid}>
-        {paintings.map((painting) => (
+        {paintings.map((painting, index) => (
           <Link
             key={painting.slug}
             href={`/${locale}/painting/${painting.slug}`}
             className={styles.item}
           >
-            <img
+            <Image
               src={painting.images[0]}
               alt={painting.title}
+              width={1200}
+              height={900}
               className={styles.image}
+              sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
+              priority={index < 3}
             />
 
             <div className={styles.meta}>
