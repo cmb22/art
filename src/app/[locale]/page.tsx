@@ -1,5 +1,5 @@
 // src/app/[locale]/page.tsx
-import Image from "next/image"
+
 import Link from "next/link"
 import { paintings } from "@/data/paintings"
 import { isLocale } from "@/app/i18n/config"
@@ -7,6 +7,7 @@ import { messages } from "@/app/i18n/messages"
 import { notFound } from "next/navigation"
 import styles from "./home.module.css"
 import layoutStyles from "./layout.module.css"
+import { GalleryImage } from "@/app/components/GalleryImage"
 
 const Home = async ({
   params
@@ -24,7 +25,9 @@ const Home = async ({
   return (
     <main className={styles.page}>
       <section className={styles.intro}>
-        <h1 className={layoutStyles.heading}>{t.home.heading}</h1>
+        <h1 className={layoutStyles.heading}>
+          {t.home.heading}
+        </h1>
       </section>
 
       <section className={styles.grid}>
@@ -34,19 +37,20 @@ const Home = async ({
             href={`/${locale}/painting/${painting.slug}`}
             className={styles.item}
           >
-            <Image
+            <GalleryImage
               src={painting.images[0]}
               alt={painting.title}
-              width={1200}
-              height={900}
-              className={styles.image}
-              sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
               priority={index < 3}
             />
 
             <div className={styles.meta}>
-              <span className={styles.title}>{painting.title}</span>
-              <span className={styles.price}>{painting.price}</span>
+              <span className={styles.title}>
+                {painting.title}
+              </span>
+
+              <span className={styles.price}>
+                {painting.price}
+              </span>
             </div>
           </Link>
         ))}

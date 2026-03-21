@@ -31,20 +31,6 @@
     transition: opacity 0.2s ease;
 }
 
-/* .item:hover {
-    opacity: 0.85;
-} */
-
-/* IMAGE */
-
-.image {
-    width: 100%;
-    height: 260px;
-    /* <- feste Höhe */
-    object-fit: cover;
-    /* <- wichtig */
-    display: block;
-}
 
 /* META */
 
