@@ -82,7 +82,7 @@ const PaintingPage = async ({
 
   return (
     <>
-      <section className={styles.intro}>
+      <section className={layoutStyles.intro}>
         <h1 className={layoutStyles.heading}>{painting.title}</h1>
       </section>
 

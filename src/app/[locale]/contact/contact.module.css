@@ -1,39 +1,35 @@
+/* src/app/[locale]/contact/contact.module.css */
+
 .page {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1000px;
 }
 
-.intro {
-    margin-bottom: 32px;
-    border-bottom: 2.5px solid black;
-}
-
-.heading {
-    font-size: 3rem;
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-}
+/* CONTENT */
 
 .content {
-    padding-top: 24px;
-    max-width: 720px;
+    max-width: 560px;
 }
 
+/* ITEM */
+
 .item {
-    margin: 0 0 24px;
-    font-size: 1.1rem;
-    line-height: 1.5;
+    margin-bottom: 22px;
+    font-size: 1rem;
+    line-height: 1.55;
 }
+
+/* LABEL */
 
 .label {
     display: block;
     margin-bottom: 6px;
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #666;
+    color: #777;
 }
+
+/* LINK */
 
 .link {
     color: black;

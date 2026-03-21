@@ -1,18 +1,6 @@
 .page {
-    max-width: 1100px;
     margin: 0 auto;
-    padding: 40px;
 }
-
-.intro {
-    margin-bottom: 32px;
-    border-bottom: 2.5px solid black;
-}
-
-/* .siteDivider {
-    height: 2px;
-    background: black;
-} */
 
 .heading {
     font-size: 3rem;
@@ -56,4 +44,77 @@
 
 .link:hover {
     border-bottom-color: #111;
+}
+
+.page {
+    /* max-width: 1000px; */
+}
+
+/* GRID */
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* TEXT */
+
+.content {
+    max-width: 560px;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.65;
+    margin-bottom: 18px;
+    color: #333;
+}
+
+/* IMAGE */
+
+.imageWrap {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.image {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    filter: contrast(1.05);
+}
+
+/* LINK */
+
+.links {
+    margin-top: 26px;
+}
+
+.link {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 2px;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .imageWrap {
+        order: -1;
+    }
+
+    .image {
+        max-width: 200px;
+    }
+
 }

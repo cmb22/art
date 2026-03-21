@@ -79,6 +79,11 @@
     text-transform: uppercase;
 }
 
+.intro {
+    margin-bottom: 32px;
+    border-bottom: 2.5px solid black;
+}
+
 .footer {
     margin-top: 40px;
     min-height: 40px;
