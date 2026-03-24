@@ -20,7 +20,7 @@ export const paintings: Painting[] = [
   {
     slug: "storm",
     title: "Storm",
-    price: "€575",
+    price: "€620",
     status: "available",
     images: [
       "/paintings/storm/storm.jpg"
@@ -35,7 +35,7 @@ export const paintings: Painting[] = [
   {
     slug: "hallucinations-at-dawn",
     title: "Hallucinations at Dawn",
-    price: "€230",
+    price: "€520",
     status: "available",
     images: [
       "/paintings/hallucinationsatdawn/hallucinationsatdawn.jpeg"
@@ -50,7 +50,7 @@ export const paintings: Painting[] = [
   {
     slug: "crossroads",
     title: "Crossroads",
-    price: "€200",
+    price: "€380",
     status: "available",
     images: [
       "/paintings/crossroads/crossroads.jpeg"
@@ -65,7 +65,7 @@ export const paintings: Painting[] = [
   {
     slug: "fishing-by-night",
     title: "Fishing by night",
-    price: "€200",
+    price: "€380",
     status: "available",
     images: [
       "/paintings/nightfishing/nightfishing.jpg"
@@ -80,7 +80,7 @@ export const paintings: Painting[] = [
   {
     slug: "les-yeux",
     title: "Les Yeux",
-    price: "€275",
+    price: "€460",
     status: "available",
     images: [
       "/paintings/lesyeux/lesyeux.jpg"
@@ -95,7 +95,7 @@ export const paintings: Painting[] = [
   {
     slug: "portrait-of-the-universe",
     title: "Portrait of the Universe",
-    price: "€350",
+    price: "€620",
     status: "available",
     images: [
       "/paintings/portraitoftheuniverse/portraitoftheuniverse.jpg"
@@ -110,7 +110,7 @@ export const paintings: Painting[] = [
   {
     slug: "souvenirs-declairs",
     title: "Souvenirs d’éclairs",
-    price: "€250",
+    price: "€460",
     status: "available",
     images: [
       "/paintings/leclair/leclair.jpg"
@@ -125,7 +125,7 @@ export const paintings: Painting[] = [
   {
     slug: "alfred-nobel-dreams",
     title: "Alfred Nobel Dreams",
-    price: "€250",
+    price: "€420",
     status: "available",
     images: [
       "/paintings/alfrednobeldreams/alfrednobeldreams.jpg"
@@ -140,7 +140,7 @@ export const paintings: Painting[] = [
   {
     slug: "the-unknown-painter",
     title: "The Unknown Painter",
-    price: "€350",
+    price: "€520",
     status: "available",
     images: [
       "/paintings/theunknownpainter/theunknownpainter.jpg"
