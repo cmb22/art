@@ -151,6 +151,21 @@ export const paintings: Painting[] = [
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
       fr: "Acrylique sur toile. 59,5 x 42 cm"
     }
+  },
+  {
+    slug: "clowns",
+    title: "Clowns",
+    price: "€380",
+    status: "available",
+    images: [
+      "/paintings/clowns/clowns.jpg"
+    ],
+    paypalUrl: "https://paypal.me/chrismblyth/350",
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
   }
 ]
 
