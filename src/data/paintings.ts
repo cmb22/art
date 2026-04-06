@@ -38,7 +38,7 @@ export const paintings: Painting[] = [
     price: "€520",
     status: "available",
     images: [
-      "/paintings/hallucinationsatdawn/hallucinationsatdawn.jpeg"
+      "/paintings/hallucinationsatdawn/hallucinationsatdawn.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/230",
     note: {
@@ -53,7 +53,7 @@ export const paintings: Painting[] = [
     price: "€380",
     status: "available",
     images: [
-      "/paintings/crossroads/crossroads.jpeg"
+      "/paintings/crossroads/crossroads.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/200",
     note: {
@@ -153,20 +153,35 @@ export const paintings: Painting[] = [
     }
   },
   {
-    slug: "clowns",
-    title: "Clowns",
-    price: "€380",
+    slug: "il-n-y-a-qu-une-couleur",
+    title: "Il n’y a qu'une couleur",
+    price: "€520",
     status: "available",
     images: [
-      "/paintings/clowns/clowns.jpg"
+      "/paintings/ilnyaquunecouleur/ilnyaquunecouleur.jpg"
     ],
-    paypalUrl: "https://paypal.me/chrismblyth/350",
+    paypalUrl: "https://paypal.me/chrismblyth/520",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
       fr: "Acrylique sur toile. 59,5 x 42 cm"
     }
-  }
+  },
+  // {
+  //   slug: "the-artist-and-the-moon",
+  //   title: "The Artist and the Moon",
+  //   price: "€620",
+  //   status: "available",
+  //   images: [
+  //     "/paintings/theartistandthemoon/theartistandthemoon.jpg"
+  //   ],
+  //   paypalUrl: "https://paypal.me/chrismblyth/350",
+  //   note: {
+  //     en: "Acrylic on canvas. 59,5 x 42 cm",
+  //     de: "Acryl auf Leinwand. 59,5 x 42 cm",
+  //     fr: "Acrylique sur toile. 59,5 x 42 cm"
+  //   }
+  // }
 ]
 
 export const getPaintingBySlug = (slug: string) =>
