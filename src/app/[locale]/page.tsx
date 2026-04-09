@@ -49,7 +49,7 @@ const Home = async ({
               </span>
 
               <span className={styles.price}>
-                {painting.price}
+                {painting.status === "sold" ? t.painting.sold : painting.price}
               </span>
             </div>
           </Link>

@@ -66,7 +66,7 @@ export const paintings: Painting[] = [
     slug: "fishing-by-night",
     title: "Fishing by night",
     price: "€380",
-    status: "available",
+    status: "sold",
     images: [
       "/paintings/nightfishing/nightfishing.jpg"
     ],
@@ -167,6 +167,21 @@ export const paintings: Painting[] = [
       fr: "Acrylique sur toile. 59,5 x 42 cm"
     }
   },
+  {
+    slug: "summer",
+    title: "Summer",
+    price: "€380",
+    status: "available",
+    images: [
+      "/paintings/summer/summer.jpg"
+    ],
+    paypalUrl: "https://paypal.me/chrismblyth/380",
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
+  }
   // {
   //   slug: "the-artist-and-the-moon",
   //   title: "The Artist and the Moon",
