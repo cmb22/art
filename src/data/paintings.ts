@@ -181,22 +181,22 @@ export const paintings: Painting[] = [
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
       fr: "Acrylique sur toile. 59,5 x 42 cm"
     }
+  },
+  {
+    slug: "bonsai",
+    title: "Bonsai",
+    price: "€520",
+    status: "available",
+    images: [
+      "/paintings/bonsai/bonsai.jpg"
+    ],
+    paypalUrl: "https://paypal.me/chrismblyth/520",
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
   }
-  // {
-  //   slug: "the-artist-and-the-moon",
-  //   title: "The Artist and the Moon",
-  //   price: "€620",
-  //   status: "available",
-  //   images: [
-  //     "/paintings/theartistandthemoon/theartistandthemoon.jpg"
-  //   ],
-  //   paypalUrl: "https://paypal.me/chrismblyth/350",
-  //   note: {
-  //     en: "Acrylic on canvas. 59,5 x 42 cm",
-  //     de: "Acryl auf Leinwand. 59,5 x 42 cm",
-  //     fr: "Acrylique sur toile. 59,5 x 42 cm"
-  //   }
-  // }
 ]
 
 export const getPaintingBySlug = (slug: string) =>
