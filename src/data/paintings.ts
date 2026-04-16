@@ -25,7 +25,7 @@ export const paintings: Painting[] = [
     images: [
       "/paintings/storm/storm.jpg"
     ],
-    paypalUrl: "https://paypal.me/chrismblyth/575",
+    paypalUrl: "https://paypal.me/chrismblyth/620",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
@@ -40,7 +40,7 @@ export const paintings: Painting[] = [
     images: [
       "/paintings/hallucinationsatdawn/hallucinationsatdawn.jpg"
     ],
-    paypalUrl: "https://paypal.me/chrismblyth/230",
+    paypalUrl: "https://paypal.me/chrismblyth/520",
     note: {
       en: "Acrylic on canvas. 60 x 42 cm",
       de: "Acryl auf Leinwand. 60 x 42 cm",
@@ -55,7 +55,7 @@ export const paintings: Painting[] = [
     images: [
       "/paintings/crossroads/crossroads.jpg"
     ],
-    paypalUrl: "https://paypal.me/chrismblyth/200",
+    paypalUrl: "https://paypal.me/chrismblyth/380",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
@@ -70,7 +70,7 @@ export const paintings: Painting[] = [
     images: [
       "/paintings/nightfishing/nightfishing.jpg"
     ],
-    paypalUrl: "https://paypal.me/chrismblyth/200",
+    paypalUrl: "https://paypal.me/chrismblyth/380",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
@@ -85,7 +85,7 @@ export const paintings: Painting[] = [
     images: [
       "/paintings/lesyeux/lesyeux.jpg"
     ],
-    paypalUrl: "https://paypal.me/chrismblyth/275",
+    paypalUrl: "https://paypal.me/chrismblyth/460",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
@@ -100,7 +100,7 @@ export const paintings: Painting[] = [
     images: [
       "/paintings/portraitoftheuniverse/portraitoftheuniverse.jpg"
     ],
-    paypalUrl: "https://paypal.me/chrismblyth/350",
+    paypalUrl: "https://paypal.me/chrismblyth/620",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
@@ -115,7 +115,7 @@ export const paintings: Painting[] = [
     images: [
       "/paintings/leclair/leclair.jpg"
     ],
-    paypalUrl: "https://paypal.me/chrismblyth/250",
+    paypalUrl: "https://paypal.me/chrismblyth/460",
     note: {
       en: "Reminders of lightning. Acrylic on canvas. 59,5 x 42 cm",
       de: "Erinnerungen an Blitze. Acryl auf Leinwand. 59,5 x 42 cm",
@@ -125,12 +125,12 @@ export const paintings: Painting[] = [
   {
     slug: "alfred-nobel-dreams",
     title: "Alfred Nobel Dreams",
-    price: "€420",
+    price: "€460",
     status: "available",
     images: [
       "/paintings/alfrednobeldreams/alfrednobeldreams.jpg"
     ],
-    paypalUrl: "https://paypal.me/chrismblyth/250",
+    paypalUrl: "https://paypal.me/chrismblyth/460",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
@@ -145,7 +145,7 @@ export const paintings: Painting[] = [
     images: [
       "/paintings/theunknownpainter/theunknownpainter.jpg"
     ],
-    paypalUrl: "https://paypal.me/chrismblyth/350",
+    paypalUrl: "https://paypal.me/chrismblyth/520",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
@@ -191,6 +191,21 @@ export const paintings: Painting[] = [
       "/paintings/bonsai/bonsai.jpg"
     ],
     paypalUrl: "https://paypal.me/chrismblyth/520",
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
+  },
+  {
+    slug: "symmetry",
+    title: "Symmetry",
+    price: "€380",
+    status: "available",
+    images: [
+      "/paintings/symmetry/symmetry.jpg"
+    ],
+    paypalUrl: "https://paypal.me/chrismblyth/380",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
