@@ -22,6 +22,15 @@ const Home = async ({
 
   const t = messages[locale]
 
+  const sortedPaintings = paintings.sort((a, b) => {
+    if (a.priority !== b.priority) {
+      return a.priority - b.priority
+    }
+    const priceA = parseInt(a.price.replace(/[^\d]/g, ""))
+    const priceB = parseInt(b.price.replace(/[^\d]/g, ""))
+    return priceB - priceA
+  })
+
   return (
     <main className={styles.page}>
       <section className={styles.intro}>
@@ -31,7 +40,7 @@ const Home = async ({
       </section>
 
       <section className={styles.grid}>
-        {paintings.map((painting, index) => (
+        {sortedPaintings.map((painting, index) => (
           <Link
             key={painting.slug}
             href={`/${locale}/painting/${painting.slug}`}

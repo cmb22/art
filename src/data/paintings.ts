@@ -10,6 +10,7 @@ type Painting = {
   slug: string
   title: string
   price: string
+  priority: number
   status: "available" | "sold"
   images: string[]
   paypalUrl: string
@@ -21,71 +22,10 @@ export const paintings: Painting[] = [
     slug: "storm",
     title: "Storm",
     price: "€620",
+    priority: 1,
     status: "available",
-    images: [
-      "/paintings/storm/storm.jpg"
-    ],
+    images: ["/paintings/storm/storm.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/620",
-    note: {
-      en: "Acrylic on canvas. 59,5 x 42 cm",
-      de: "Acryl auf Leinwand. 59,5 x 42 cm",
-      fr: "Acrylique sur toile. 59,5 x 42 cm"
-    }
-  },
-  {
-    slug: "hallucinations-at-dawn",
-    title: "Hallucinations at Dawn",
-    price: "€520",
-    status: "available",
-    images: [
-      "/paintings/hallucinationsatdawn/hallucinationsatdawn.jpg"
-    ],
-    paypalUrl: "https://paypal.me/chrismblyth/520",
-    note: {
-      en: "Acrylic on canvas. 60 x 42 cm",
-      de: "Acryl auf Leinwand. 60 x 42 cm",
-      fr: "Acrylique sur toile. 60 x 42 cm"
-    }
-  },
-  {
-    slug: "crossroads",
-    title: "Crossroads",
-    price: "€380",
-    status: "available",
-    images: [
-      "/paintings/crossroads/crossroads.jpg"
-    ],
-    paypalUrl: "https://paypal.me/chrismblyth/380",
-    note: {
-      en: "Acrylic on canvas. 59,5 x 42 cm",
-      de: "Acryl auf Leinwand. 59,5 x 42 cm",
-      fr: "Acrylique sur toile. 59,5 x 42 cm"
-    }
-  },
-  {
-    slug: "fishing-by-night",
-    title: "Fishing by night",
-    price: "€380",
-    status: "sold",
-    images: [
-      "/paintings/nightfishing/nightfishing.jpg"
-    ],
-    paypalUrl: "https://paypal.me/chrismblyth/380",
-    note: {
-      en: "Acrylic on canvas. 59,5 x 42 cm",
-      de: "Acryl auf Leinwand. 59,5 x 42 cm",
-      fr: "Acrylique sur toile. 59,5 x 42 cm"
-    }
-  },
-  {
-    slug: "les-yeux",
-    title: "Les Yeux",
-    price: "€460",
-    status: "available",
-    images: [
-      "/paintings/lesyeux/lesyeux.jpg"
-    ],
-    paypalUrl: "https://paypal.me/chrismblyth/460",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
@@ -96,10 +36,9 @@ export const paintings: Painting[] = [
     slug: "portrait-of-the-universe",
     title: "Portrait of the Universe",
     price: "€620",
+    priority: 2,
     status: "available",
-    images: [
-      "/paintings/portraitoftheuniverse/portraitoftheuniverse.jpg"
-    ],
+    images: ["/paintings/portraitoftheuniverse/portraitoftheuniverse.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/620",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
@@ -107,44 +46,28 @@ export const paintings: Painting[] = [
       fr: "Acrylique sur toile. 59,5 x 42 cm"
     }
   },
+
   {
-    slug: "souvenirs-declairs",
-    title: "Souvenirs d’éclairs",
-    price: "€460",
+    slug: "hallucinations-at-dawn",
+    title: "Hallucinations at Dawn",
+    price: "€520",
+    priority: 3,
     status: "available",
-    images: [
-      "/paintings/leclair/leclair.jpg"
-    ],
-    paypalUrl: "https://paypal.me/chrismblyth/460",
+    images: ["/paintings/hallucinationsatdawn/hallucinationsatdawn.jpg"],
+    paypalUrl: "https://paypal.me/chrismblyth/520",
     note: {
-      en: "Reminders of lightning. Acrylic on canvas. 59,5 x 42 cm",
-      de: "Erinnerungen an Blitze. Acryl auf Leinwand. 59,5 x 42 cm",
-      fr: "Souvenirs d’éclairs. Acrylique sur toile. 59,5 x 42 cm"
-    }
-  },
-  {
-    slug: "alfred-nobel-dreams",
-    title: "Alfred Nobel Dreams",
-    price: "€460",
-    status: "available",
-    images: [
-      "/paintings/alfrednobeldreams/alfrednobeldreams.jpg"
-    ],
-    paypalUrl: "https://paypal.me/chrismblyth/460",
-    note: {
-      en: "Acrylic on canvas. 59,5 x 42 cm",
-      de: "Acryl auf Leinwand. 59,5 x 42 cm",
-      fr: "Acrylique sur toile. 59,5 x 42 cm"
+      en: "Acrylic on canvas. 60 x 42 cm",
+      de: "Acryl auf Leinwand. 60 x 42 cm",
+      fr: "Acrylique sur toile. 60 x 42 cm"
     }
   },
   {
     slug: "the-unknown-painter",
     title: "The Unknown Painter",
     price: "€520",
+    priority: 4,
     status: "available",
-    images: [
-      "/paintings/theunknownpainter/theunknownpainter.jpg"
-    ],
+    images: ["/paintings/theunknownpainter/theunknownpainter.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/520",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
@@ -156,26 +79,10 @@ export const paintings: Painting[] = [
     slug: "il-n-y-a-qu-une-couleur",
     title: "Il n’y a qu'une couleur",
     price: "€520",
+    priority: 5,
     status: "available",
-    images: [
-      "/paintings/ilnyaquunecouleur/ilnyaquunecouleur.jpg"
-    ],
+    images: ["/paintings/ilnyaquunecouleur/ilnyaquunecouleur.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/520",
-    note: {
-      en: "Acrylic on canvas. 59,5 x 42 cm",
-      de: "Acryl auf Leinwand. 59,5 x 42 cm",
-      fr: "Acrylique sur toile. 59,5 x 42 cm"
-    }
-  },
-  {
-    slug: "summer",
-    title: "Summer",
-    price: "€380",
-    status: "available",
-    images: [
-      "/paintings/summer/summer.jpg"
-    ],
-    paypalUrl: "https://paypal.me/chrismblyth/380",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
@@ -186,11 +93,82 @@ export const paintings: Painting[] = [
     slug: "bonsai",
     title: "Bonsai",
     price: "€520",
+    priority: 6,
     status: "available",
-    images: [
-      "/paintings/bonsai/bonsai.jpg"
-    ],
+    images: ["/paintings/bonsai/bonsai.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/520",
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
+  },
+
+  {
+    slug: "les-yeux",
+    title: "Les Yeux",
+    price: "€460",
+    priority: 7,
+    status: "available",
+    images: ["/paintings/lesyeux/lesyeux.jpg"],
+    paypalUrl: "https://paypal.me/chrismblyth/460",
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
+  },
+  {
+    slug: "souvenirs-declairs",
+    title: "Souvenirs d’éclairs",
+    price: "€460",
+    priority: 8,
+    status: "available",
+    images: ["/paintings/leclair/leclair.jpg"],
+    paypalUrl: "https://paypal.me/chrismblyth/460",
+    note: {
+      en: "Reminders of lightning. Acrylic on canvas. 59,5 x 42 cm",
+      de: "Erinnerungen an Blitze. Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Souvenirs d’éclairs. Acrylique sur toile. 59,5 x 42 cm"
+    }
+  },
+  {
+    slug: "alfred-nobel-dreams",
+    title: "Alfred Nobel Dreams",
+    price: "€460",
+    priority: 9,
+    status: "available",
+    images: ["/paintings/alfrednobeldreams/alfrednobeldreams.jpg"],
+    paypalUrl: "https://paypal.me/chrismblyth/460",
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
+  },
+
+  {
+    slug: "crossroads",
+    title: "Crossroads",
+    price: "€380",
+    priority: 10,
+    status: "available",
+    images: ["/paintings/crossroads/crossroads.jpg"],
+    paypalUrl: "https://paypal.me/chrismblyth/380",
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
+  },
+  {
+    slug: "summer",
+    title: "Summer",
+    price: "€380",
+    priority: 11,
+    status: "available",
+    images: ["/paintings/summer/summer.jpg"],
+    paypalUrl: "https://paypal.me/chrismblyth/380",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
       de: "Acryl auf Leinwand. 59,5 x 42 cm",
@@ -201,10 +179,24 @@ export const paintings: Painting[] = [
     slug: "symmetry",
     title: "Symmetry",
     price: "€380",
+    priority: 12,
     status: "available",
-    images: [
-      "/paintings/symmetry/symmetry.jpg"
-    ],
+    images: ["/paintings/symmetry/symmetry.jpg"],
+    paypalUrl: "https://paypal.me/chrismblyth/380",
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
+  },
+
+  {
+    slug: "fishing-by-night",
+    title: "Fishing by night",
+    price: "€380",
+    priority: 99,
+    status: "sold",
+    images: ["/paintings/nightfishing/nightfishing.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/380",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
