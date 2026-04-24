@@ -23,13 +23,12 @@ const Home = async ({
 
   const t = messages[locale]
 
-  const sortedPaintings = paintings.sort((a, b) => {
+  const sortedPaintings = [...paintings].sort((a, b) => {
     if (a.priority !== b.priority) {
       return a.priority - b.priority
     }
-    const priceA = parseInt(a.price.replace(/[^\d]/g, ""))
-    const priceB = parseInt(b.price.replace(/[^\d]/g, ""))
-    return priceB - priceA
+
+    return b.price - a.price
   })
 
   return (
