@@ -1,22 +1,51 @@
+// src/app/components/LocaleSwitch.tsx
 "use client"
 
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 import styles from "./LocaleSwitch.module.css"
-import { usePathname } from "next/navigation"
+
+const locales = ["en", "de", "fr"] as const
 
 export const LocaleSwitch = () => {
     const pathname = usePathname()
+    const router = useRouter()
 
     const segments = pathname.split("/")
     const currentLocale = segments[1]
-    const restPath = segments.slice(2).join("/") // entfernt aktuelle locale
+    const restPath = segments.slice(2).join("/")
+
+    const getHref = (locale: typeof locales[number]) =>
+        restPath ? `/${locale}/${restPath}` : `/${locale}`
 
     return (
         <div className={styles.localeSwitch}>
-            <Link className={currentLocale === "en" ? styles.active : ""} href={`/en/${restPath}`}>EN</Link>
-            <Link className={currentLocale === "de" ? styles.active : ""} href={`/de/${restPath}`}>DE</Link>
-            <Link className={currentLocale === "fr" ? styles.active : ""} href={`/fr/${restPath}`}>FR</Link>
+            <div className={styles.links}>
+                {locales.map((locale) => (
+                    <Link
+                        key={locale}
+                        className={currentLocale === locale ? styles.active : ""}
+                        href={getHref(locale)}
+                    >
+                        {locale.toUpperCase()}
+                    </Link>
+                ))}
+            </div>
+
+            <select
+                className={styles.select}
+                value={currentLocale}
+                onChange={(event) =>
+                    router.push(getHref(event.target.value as typeof locales[number]))
+                }
+                aria-label="Select language"
+            >
+                {locales.map((locale) => (
+                    <option key={locale} value={locale}>
+                        {locale.toUpperCase()}
+                    </option>
+                ))}
+            </select>
         </div>
     )
 }
-

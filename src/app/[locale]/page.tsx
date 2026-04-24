@@ -8,6 +8,7 @@ import { notFound } from "next/navigation"
 import styles from "./home.module.css"
 import layoutStyles from "./layout.module.css"
 import { GalleryImage } from "@/app/components/GalleryImage"
+import { PaintingPrice } from "@/app/components/PaintingPrice"
 
 const Home = async ({
   params
@@ -58,7 +59,17 @@ const Home = async ({
               </span>
 
               <span className={styles.price}>
-                {painting.status === "sold" ? t.painting.sold : painting.price}
+
+                <PaintingPrice
+
+                  priceEur={painting.price}
+
+                  status={painting.status}
+
+                  soldLabel={t.painting.sold}
+
+                />
+
               </span>
             </div>
           </Link>

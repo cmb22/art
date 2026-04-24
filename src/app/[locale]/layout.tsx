@@ -4,11 +4,13 @@ import type { Metadata } from "next"
 import type { ReactNode } from "react"
 import { notFound } from "next/navigation"
 import { isLocale, locales } from "@/app/i18n/config"
+import { CurrencyProvider } from "@/app/context/CurrencyProvider"
 import { messages } from "@/app/i18n/messages"
 import Link from "next/link"
 import { LocaleSwitch } from "@/app/components/LocaleSwitch"
 import { LogoTitle } from "@/app/components/LogoTitle"
 import { MainNav } from "@/app/components/MainNav"
+import { CurrencySwitch } from "@/app/components/CurrencySwitch"
 import styles from "./layout.module.css"
 
 export const generateStaticParams = () => {
@@ -82,44 +84,47 @@ const LocaleLayout = async ({
 
     return (
         <>
-            <div className={styles.siteShell}>
-                <header className={styles.siteHeader}>
-                    <div className={styles.siteBrand}>
-                        <Link href={`/${locale}`} className={styles.siteTitleLink}>
-                            <LogoTitle />
-                        </Link>
+            <CurrencyProvider>
+                <div className={styles.siteShell}>
+                    <header className={styles.siteHeader}>
+                        <div className={styles.siteBrand}>
+                            <Link href={`/${locale}`} className={styles.siteTitleLink}>
+                                <LogoTitle />
+                            </Link>
 
-                        <nav className={styles.siteNav}>
-                            <div className={styles.firstNav}>
-                                <MainNav href={`/${locale}/about`}>
-                                    {t.nav.about}
-                                </MainNav>
-                                <MainNav href={`/${locale}/shipping`}>
-                                    {t.nav.shipping}
-                                </MainNav>
-                                <MainNav href={`/${locale}/contact`}>
-                                    {t.nav.contact}
-                                </MainNav>
-                            </div>
+                            <nav className={styles.siteNav}>
+                                <div className={styles.firstNav}>
+                                    <MainNav href={`/${locale}/about`}>
+                                        {t.nav.about}
+                                    </MainNav>
+                                    <MainNav href={`/${locale}/shipping`}>
+                                        {t.nav.shipping}
+                                    </MainNav>
+                                    <MainNav href={`/${locale}/contact`}>
+                                        {t.nav.contact}
+                                    </MainNav>
+                                </div>
 
-                            <div className={styles.localeSwitch}>
-                                <LocaleSwitch />
-                            </div>
-                        </nav>
-                    </div>
-                </header>
+                                <div className={styles.localeSwitch}>
+                                    <CurrencySwitch />
+                                    <LocaleSwitch />
+                                </div>
+                            </nav>
+                        </div>
+                    </header>
 
-                <div className={styles.siteDivider} />
+                    <div className={styles.siteDivider} />
 
-                {children}
-            </div>
-
-            <footer className={styles.footer}>
-                <div className={styles.footerInner}>
-                    <span>Chris M Blyth</span>
-                    <span>{new Date().getFullYear()}</span>
+                    {children}
                 </div>
-            </footer>
+
+                <footer className={styles.footer}>
+                    <div className={styles.footerInner}>
+                        <span>Chris M Blyth</span>
+                        <span>{new Date().getFullYear()}</span>
+                    </div>
+                </footer>
+            </CurrencyProvider>
         </>
     )
 }

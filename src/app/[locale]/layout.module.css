@@ -58,6 +58,8 @@
 
 .localeSwitch {
     margin-left: auto;
+    display: flex;
+    gap: 20px;
 }
 
 .siteLink {
@@ -107,52 +109,6 @@
 
 }
 
-/* 
-@media (max-width: 1270px) {
-    .siteTitle h1 {
-        font-size: 175px;
-
-    }
-}
-
-@media (max-width: 1205px) {
-    .siteTitle h1 {
-        font-size: 165px;
-    }
-}
-
-@media (max-width: 1180px) {
-    .siteTitle h1 {
-        font-size: 158px;
-    }
-}
-
-@media (max-width: 1070px) {
-    .siteTitle h1 {
-        font-size: 155px;
-    }
-}
-
-@media (max-width: 1050px) {
-    .siteTitle h1 {
-        font-size: 143px;
-    }
-}
-
-@media (max-width: 950px) {
-    .siteTitle h1 {
-        font-size: 121px;
-
-    }
-}
-
-@media (max-width: 900px) {
-    .siteTitle h1 {
-        font-size: 112px;
-
-    }
-}
-*/
 
 @media (max-width: 800px) {
     .siteNav a {
@@ -165,20 +121,12 @@
 }
 
 @media (max-width: 550px) {
-    /* .siteTitle h1 {
-        font-size: 76px;
-    } */
-
     .siteNav a {
         font-size: 12px;
     }
 }
 
 @media (max-width: 430px) {
-    /* .siteTitle h1 {
-        font-size: 56px;
-    } */
-
     .siteNav a {
         font-size: 12px;
     }
@@ -189,11 +137,6 @@
 }
 
 @media (max-width: 380px) {
-    /* .siteTitle h1 {
-        font-size: 53px;
-        letter-spacing: -4.16px;
-    } */
-
     .siteNav a {
         font-size: 9px;
     }
@@ -202,9 +145,3 @@
         font-size: 20px;
     }
 }
-
-/* @media (max-width: 365px) {
-    .siteTitle h1 {
-        font-size: 50px;
-    }
-} */

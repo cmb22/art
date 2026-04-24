@@ -9,7 +9,7 @@ type LocaleNote = {
 type Painting = {
   slug: string
   title: string
-  price: string
+  price: number
   priority: number
   status: "available" | "sold"
   images: string[]
@@ -17,11 +17,13 @@ type Painting = {
   note: LocaleNote
 }
 
+export type Currency = "EUR" | "GBP" | "USD"
+
 export const paintings: Painting[] = [
   {
     slug: "storm",
     title: "Storm",
-    price: "€620",
+    price: 620,
     priority: 1,
     status: "available",
     images: ["/paintings/storm/storm.jpg"],
@@ -35,7 +37,7 @@ export const paintings: Painting[] = [
   {
     slug: "portrait-of-the-universe",
     title: "Portrait of the Universe",
-    price: "€620",
+    price: 620,
     priority: 2,
     status: "available",
     images: ["/paintings/portraitoftheuniverse/portraitoftheuniverse.jpg"],
@@ -46,11 +48,10 @@ export const paintings: Painting[] = [
       fr: "Acrylique sur toile. 59,5 x 42 cm"
     }
   },
-
   {
     slug: "hallucinations-at-dawn",
     title: "Hallucinations at Dawn",
-    price: "€520",
+    price: 520,
     priority: 3,
     status: "available",
     images: ["/paintings/hallucinationsatdawn/hallucinationsatdawn.jpg"],
@@ -64,7 +65,7 @@ export const paintings: Painting[] = [
   {
     slug: "the-unknown-painter",
     title: "The Unknown Painter",
-    price: "€520",
+    price: 520,
     priority: 4,
     status: "available",
     images: ["/paintings/theunknownpainter/theunknownpainter.jpg"],
@@ -78,7 +79,7 @@ export const paintings: Painting[] = [
   {
     slug: "il-n-y-a-qu-une-couleur",
     title: "Il n’y a qu'une couleur",
-    price: "€520",
+    price: 520,
     priority: 5,
     status: "available",
     images: ["/paintings/ilnyaquunecouleur/ilnyaquunecouleur.jpg"],
@@ -92,7 +93,7 @@ export const paintings: Painting[] = [
   {
     slug: "bonsai",
     title: "Bonsai",
-    price: "€520",
+    price: 520,
     priority: 6,
     status: "available",
     images: ["/paintings/bonsai/bonsai.jpg"],
@@ -103,11 +104,10 @@ export const paintings: Painting[] = [
       fr: "Acrylique sur toile. 59,5 x 42 cm"
     }
   },
-
   {
     slug: "les-yeux",
     title: "Les Yeux",
-    price: "€460",
+    price: 460,
     priority: 7,
     status: "available",
     images: ["/paintings/lesyeux/lesyeux.jpg"],
@@ -121,7 +121,7 @@ export const paintings: Painting[] = [
   {
     slug: "souvenirs-declairs",
     title: "Souvenirs d’éclairs",
-    price: "€460",
+    price: 460,
     priority: 8,
     status: "available",
     images: ["/paintings/leclair/leclair.jpg"],
@@ -135,7 +135,7 @@ export const paintings: Painting[] = [
   {
     slug: "alfred-nobel-dreams",
     title: "Alfred Nobel Dreams",
-    price: "€460",
+    price: 460,
     priority: 9,
     status: "available",
     images: ["/paintings/alfrednobeldreams/alfrednobeldreams.jpg"],
@@ -146,11 +146,10 @@ export const paintings: Painting[] = [
       fr: "Acrylique sur toile. 59,5 x 42 cm"
     }
   },
-
   {
     slug: "crossroads",
     title: "Crossroads",
-    price: "€380",
+    price: 380,
     priority: 10,
     status: "available",
     images: ["/paintings/crossroads/crossroads.jpg"],
@@ -164,7 +163,7 @@ export const paintings: Painting[] = [
   {
     slug: "summer",
     title: "Summer",
-    price: "€380",
+    price: 380,
     priority: 11,
     status: "available",
     images: ["/paintings/summer/summer.jpg"],
@@ -178,7 +177,7 @@ export const paintings: Painting[] = [
   {
     slug: "symmetry",
     title: "Symmetry",
-    price: "€380",
+    price: 380,
     priority: 12,
     status: "available",
     images: ["/paintings/symmetry/symmetry.jpg"],
@@ -189,11 +188,10 @@ export const paintings: Painting[] = [
       fr: "Acrylique sur toile. 59,5 x 42 cm"
     }
   },
-
   {
     slug: "fishing-by-night",
     title: "Fishing by night",
-    price: "€380",
+    price: 380,
     priority: 99,
     status: "sold",
     images: ["/paintings/nightfishing/nightfishing.jpg"],
