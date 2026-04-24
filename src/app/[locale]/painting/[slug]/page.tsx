@@ -75,7 +75,7 @@ const PaintingPage = async ({
   const body = encodeURIComponent(
     t.email.body
       .replace("{title}", painting.title)
-      .replace("{price}", painting.price)
+      .replace("{price}", painting.price.toString())
   )
 
   const mailto = `mailto:chrismblyth@gmail.com?subject=${subject}&body=${body}`
