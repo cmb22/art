@@ -1,5 +1,6 @@
 .siteShell {
-    min-height: 94vh;
+    /* min-height: 93vh; */
+    height: 100%;
 }
 
 .siteHeader {
@@ -41,6 +42,8 @@
 
 .siteNav {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     padding-top: 8px;
     width: 100%;
@@ -90,6 +93,7 @@
     margin-top: 40px;
     min-height: 40px;
     border-top: 2px solid black;
+    margin-top: 40px;
 }
 
 .footerInner {
