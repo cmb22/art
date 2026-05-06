@@ -8,6 +8,7 @@ import { messages } from "@/app/i18n/messages"
 import { PaintingImage } from "@/app/components/PaintingImage"
 import styles from "./painting.module.css"
 import layoutStyles from "@/app/[locale]/layout.module.css"
+import { PaintingPrice } from "@/app/components/PaintingPrice"
 
 export const generateMetadata = async ({
   params
@@ -99,7 +100,8 @@ const PaintingPage = async ({
         </div>
 
         <div className={styles.meta}>
-          <p className={styles.price}>{painting.price}</p>
+          <p className={styles.price}>
+            <PaintingPrice priceEur={painting.price} status={painting.status} soldLabel={t.painting.sold} /></p>
 
           {painting.note?.[locale] && (
             <p className={styles.note}>{painting.note[locale]}</p>
@@ -111,9 +113,6 @@ const PaintingPage = async ({
             </a>
           )}
 
-          {painting.status === "sold" && (
-            <p className={styles.sold}>{t.painting.sold}</p>
-          )}
         </div>
       </main>
     </>
