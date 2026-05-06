@@ -105,6 +105,20 @@ export const paintings: Painting[] = [
     }
   },
   {
+    slug: "fire-at-10",
+    title: "Fire at 10",
+    price: 520,
+    priority: 6,
+    status: "available",
+    images: ["/paintings/fire-at-10/Fire-at-10.JPG"],
+    paypalUrl: "https://paypal.me/chrismblyth/520",
+    note: {
+      en: "Acrylic on canvas. 59,5 x 42 cm",
+      de: "Acryl auf Leinwand. 59,5 x 42 cm",
+      fr: "Acrylique sur toile. 59,5 x 42 cm"
+    }
+  },
+  {
     slug: "les-yeux",
     title: "Les Yeux",
     price: 460,
