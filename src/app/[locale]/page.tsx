@@ -1,7 +1,7 @@
 // src/app/[locale]/page.tsx
 
 import Link from "next/link"
-import { paintings } from "@/data/paintings"
+import { HIDE_PRICES, paintings } from "@/data/paintings"
 import { isLocale } from "@/app/i18n/config"
 import { messages } from "@/app/i18n/messages"
 import { notFound } from "next/navigation"
@@ -59,15 +59,12 @@ const Home = async ({
 
               <span className={styles.price}>
 
-                <PaintingPrice
-
+                {!HIDE_PRICES && <PaintingPrice
                   priceEur={painting.price}
-
                   status={painting.status}
-
                   soldLabel={t.painting.sold}
-
-                />
+                  language={locale}
+                />}
 
               </span>
             </div>

@@ -101,7 +101,13 @@ const PaintingPage = async ({
 
         <div className={styles.meta}>
           <p className={styles.price}>
-            <PaintingPrice priceEur={painting.price} status={painting.status} soldLabel={t.painting.sold} /></p>
+            <PaintingPrice
+              priceEur={painting.price}
+              status={painting.status}
+              soldLabel={t.painting.sold}
+              language={locale}
+            />
+          </p>
 
           {painting.note?.[locale] && (
             <p className={styles.note}>{painting.note[locale]}</p>

@@ -105,12 +105,12 @@ export const paintings: Painting[] = [
     }
   },
   {
-    slug: "fire-at-10",
-    title: "Fire at 10",
+    slug: "island",
+    title: "Island",
     price: 520,
     priority: 6,
     status: "available",
-    images: ["/paintings/fire-at-10/Fire-at-10.JPG"],
+    images: ["/paintings/island/island.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/520",
     note: {
       en: "Acrylic on canvas. 59,5 x 42 cm",
@@ -232,5 +232,6 @@ export const paintings: Painting[] = [
   }
 ]
 
+export const HIDE_PRICES = true
 export const getPaintingBySlug = (slug: string) =>
   paintings.find((p) => p.slug === slug)
