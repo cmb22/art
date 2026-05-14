@@ -1,8 +1,7 @@
-// src/app/layout.tsx
-
 import type { Metadata } from "next"
-import "./globals.css"
 import { Roboto } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import "./globals.css"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chrismblyth.com"),
@@ -22,6 +21,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body className={roboto.className}>
         {children}
+        <Analytics />
       </body>
     </html>
   )
