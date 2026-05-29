@@ -1,4 +1,3 @@
-// src/i18n/messages.ts
 import type { Locale } from "./config"
 
 export const messages = {
@@ -13,7 +12,8 @@ export const messages = {
         },
         painting: {
             acquire: "Acquire",
-            sold: "Sold"
+            sold: "Sold",
+            prints: "Original artwork and fine art prints available on request."
         },
         about: {
             heading: "About",
@@ -36,9 +36,9 @@ export const messages = {
             subject: 'Enquiry about "{title}"',
             body: `Hello,
 
-I'm interested in "{title}" ({price}).
+I'm interested in "{title}".
 
-Please let me know if it is still available and what the shipping options would be.
+Please let me know if the original artwork is still available, and whether fine art prints are also available.
 
 Best regards`
         }
@@ -55,7 +55,8 @@ Best regards`
         },
         painting: {
             acquire: "Anfragen",
-            sold: "Verkauft"
+            sold: "Verkauft",
+            prints: "Originalgemälde und Fine-Art-Prints auf Anfrage erhältlich."
         },
         about: {
             heading: "Über",
@@ -78,9 +79,9 @@ Best regards`
             subject: 'Anfrage zu "{title}"',
             body: `Hallo,
 
-ich interessiere mich für "{title}" ({price}).
+ich interessiere mich für "{title}".
 
-Bitte teilen Sie mir mit, ob es noch verfügbar ist und wie die Versandoptionen aussehen.
+Bitte teilen Sie mir mit, ob das Originalgemälde noch verfügbar ist und ob auch Fine-Art-Prints erhältlich sind.
 
 Viele Grüße`
         }
@@ -97,7 +98,8 @@ Viele Grüße`
         },
         painting: {
             acquire: "Demander",
-            sold: "Vendu"
+            sold: "Vendu",
+            prints: "Œuvre originale et tirages fine art disponibles sur demande."
         },
         about: {
             heading: "À propos",
@@ -120,9 +122,9 @@ Viele Grüße`
             subject: 'Demande concernant "{title}"',
             body: `Bonjour,
 
-je suis intéressé par "{title}" ({price}).
+je suis intéressé par "{title}".
 
-Merci de me dire s’il est toujours disponible et quelles sont les options de livraison.
+Merci de me dire si l’œuvre originale est toujours disponible et si des tirages fine art sont également proposés.
 
 Cordialement`
         }

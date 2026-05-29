@@ -106,7 +106,7 @@ const LocaleLayout = async ({
                                 </div>
 
                                 <div className={styles.localeSwitch}>
-                                    <CurrencySwitch />
+                                    {/* <CurrencySwitch /> */}
                                     <LocaleSwitch />
                                 </div>
                             </nav>

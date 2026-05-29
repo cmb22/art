@@ -100,18 +100,21 @@ const PaintingPage = async ({
         </div>
 
         <div className={styles.meta}>
-          <p className={styles.price}>
+          {/* <p className={styles.price}>
             <PaintingPrice
               priceEur={painting.price}
               status={painting.status}
               soldLabel={t.painting.sold}
               language={locale}
             />
-          </p>
+          </p> */}
+
 
           {painting.note?.[locale] && (
             <p className={styles.note}>{painting.note[locale]}</p>
           )}
+
+          <p className={styles.note}>{t.painting.prints}</p>
 
           {painting.status === "available" && (
             <a href={mailto} className={styles.buyButton}>
