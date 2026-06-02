@@ -132,11 +132,27 @@ export const paintings: Painting[] = [
       fr: "Acrylique sur toile. 59,5 x 42 cm"
     }
   },
+
+  {
+    slug: "sebaudir-au-soleil",
+    title: "S'ébaudir au soleil",
+    price: 460,
+    priority: 8,
+    status: "available",
+    images: ["/paintings/sebaudirausoleil/sebaudirausoleil.jpg"],
+    paypalUrl: "https://paypal.me/chrismblyth/460",
+    note: {
+      en: "Acrylic on canvas. 50 x 50 cm",
+      de: "Acryl auf Leinwand. 50 x 50 cm",
+      fr: "Acrylique sur toile. 50 x 50 cm"
+    }
+  },
+
   {
     slug: "les-yeux",
     title: "Les Yeux",
     price: 460,
-    priority: 8,
+    priority: 9,
     status: "available",
     images: ["/paintings/lesyeux/lesyeux.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/460",
@@ -150,7 +166,7 @@ export const paintings: Painting[] = [
     slug: "souvenirs-declairs",
     title: "Souvenirs d’éclairs",
     price: 460,
-    priority: 9,
+    priority: 10,
     status: "available",
     images: ["/paintings/leclair/leclair.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/460",
@@ -164,7 +180,7 @@ export const paintings: Painting[] = [
     slug: "atlantis",
     title: "Atlantis",
     price: 460,
-    priority: 10,
+    priority: 11,
     status: "available",
     images: ["/paintings/atlantis/atlantis.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/460",
@@ -178,7 +194,7 @@ export const paintings: Painting[] = [
     slug: "crossroads",
     title: "Crossroads",
     price: 380,
-    priority: 11,
+    priority: 12,
     status: "available",
     images: ["/paintings/crossroads/crossroads.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/380",
@@ -192,7 +208,7 @@ export const paintings: Painting[] = [
     slug: "summer",
     title: "Summer",
     price: 380,
-    priority: 12,
+    priority: 13,
     status: "available",
     images: ["/paintings/summer/summer.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/380",
@@ -206,7 +222,7 @@ export const paintings: Painting[] = [
     slug: "symmetry",
     title: "Symmetry",
     price: 380,
-    priority: 13,
+    priority: 14,
     status: "available",
     images: ["/paintings/symmetry/symmetry.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/380",
@@ -220,7 +236,7 @@ export const paintings: Painting[] = [
     slug: "fishing-by-night",
     title: "Fishing by night",
     price: 380,
-    priority: 14,
+    priority: 15,
     status: "sold",
     images: ["/paintings/nightfishing/nightfishing.jpg"],
     paypalUrl: "https://paypal.me/chrismblyth/380",
