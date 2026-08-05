@@ -2,12 +2,13 @@
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    background: #080808;
+    overflow-x: hidden;
+    background: #000;
     color: #f5f5f5;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.hero,
+.contentWidth,
 .section,
 .footer {
     width: min(1100px, calc(100% - 40px));
@@ -15,64 +16,99 @@
 }
 
 .hero {
-    padding: 40px 0 70px;
+    padding: 0 0 70px;
     text-align: center;
 }
 
-.logo {
-    width: min(1680px, 90%);
-    height: auto;
-    margin: 0 auto;
+.logoWrapper {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
-.tagline {
-    margin: 18px 0 36px;
-    font-size: 14px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+.logo {
+    display: block;
+    width: min(72vw, 760px);
+    max-width: 100%;
+    max-height: 78svh;
+    height: auto;
+    object-fit: contain;
 }
 
 .video {
     width: 100%;
     aspect-ratio: 16 / 9;
+    overflow: hidden;
     background: #000;
 }
 
 .video iframe {
+    display: block;
     width: 100%;
     height: 100%;
     border: 0;
 }
 
 .section {
-    padding: 60px 0;
-    border-top: 1px solid #444;
+    padding: 64px 0;
+    border-top: 1px solid #3d3d3d;
 }
 
 .bioSection {
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
 }
 
 .section h2,
 .footer h2 {
-    margin-bottom: 24px;
-    /* font-size: clamp(2rem, 5vw, 4rem); */
+    margin: 0 0 28px;
+    font-size: clamp(1.7rem, 4vw, 3rem);
+    line-height: 1;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
 }
 
-
-
 .bio {
     max-width: 820px;
-    font-size: clamp(1.15rem, 2vw, 1.45rem);
-    line-height: 1.6;
+    margin: 0;
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    line-height: 1.65;
+}
+
+.photoSection {
+    width: 100%;
 }
 
 .bandPhoto {
+    display: block;
     width: 100%;
     height: auto;
+}
+
+.lineup {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.lineup p {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 22px 0;
+    border-top: 1px solid #666;
+}
+
+.lineup strong {
+    font-size: 1.15rem;
+}
+
+.lineup span {
+    color: #b5b5b5;
 }
 
 .links {
@@ -83,12 +119,19 @@
 
 .links a,
 .button {
-    display: inline-block;
-    padding: 14px 22px;
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 22px;
     border: 1px solid #f5f5f5;
     color: #f5f5f5;
+    background: transparent;
     text-decoration: none;
     text-transform: uppercase;
+    transition:
+        background 150ms ease,
+        color 150ms ease;
 }
 
 .links a:hover,
@@ -97,26 +140,88 @@
     color: #080808;
 }
 
-.section p+p {
-    margin-top: 10px;
+.links a:focus-visible,
+.button:focus-visible,
+.footer a:focus-visible {
+    outline: 2px solid #f5f5f5;
+    outline-offset: 4px;
 }
 
 .footer {
-    padding: 60px 0 90px;
-    border-top: 1px solid #444;
+    padding: 64px 0 90px;
+    border-top: 1px solid #3d3d3d;
 }
 
-.footer a {
+.footer p {
+    margin: 0 0 20px;
+}
+
+.contactLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.contactLinks a {
     color: #f5f5f5;
+    font-size: clamp(1.05rem, 2.5vw, 1.45rem);
     text-decoration: none;
-    font-size: 22px;
+}
+
+.contactLinks a:hover {
+    text-decoration: underline;
+}
+
+.location {
+    margin-top: 30px !important;
+    color: #a5a5a5;
 }
 
 @media (max-width: 700px) {
 
-    .hero,
+    .contentWidth,
     .section,
     .footer {
         width: calc(100% - 24px);
+    }
+
+    .hero {
+        padding-bottom: 52px;
+    }
+
+    .logoWrapper {
+        min-height: 100svh;
+        width: 100%;
+        margin: 0;
+        padding: 24px 12px;
+    }
+
+    .logo {
+        width: 88vw;
+        max-height: 82svh;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .lineup {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .links {
+        flex-direction: column;
+    }
+
+    .links a,
+    .button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .footer {
+        padding: 50px 0 70px;
     }
 }
