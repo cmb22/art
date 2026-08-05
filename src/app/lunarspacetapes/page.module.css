@@ -70,8 +70,8 @@
 
 .playButton {
     position: absolute;
-    right: 50%;
-    bottom: 50%;
+    bottom: 25%;
+    right: calc(50% - 41px);
     z-index: 3;
     display: flex;
     width: 82px;
@@ -301,8 +301,10 @@
     }
 
     .playButton {
-        right: 14px;
-        bottom: 14px;
+        /* right: 14px; */
+        /* bottom: 14px; */
+        bottom: 10%;
+        right: calc(50% - 32px);
         width: 64px;
         height: 64px;
         font-size: 27px;
