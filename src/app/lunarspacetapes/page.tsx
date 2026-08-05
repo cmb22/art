@@ -1,0 +1,99 @@
+import Image from "next/image";
+import styles from "./page.module.css";
+
+export const metadata = {
+    title: "Lunar Space Tapes — Electronic Press Kit",
+    description: "Psychedelic rock trio from Berlin.",
+};
+
+export default function LunarSpaceTapesEPK() {
+    return (
+        <main id="lunar-epk" className={styles.page}>
+            <header className={styles.hero}>
+                <Image
+                    src="/lunarspacetapes/logo.jpg"
+                    alt="Lunar Space Tapes"
+                    width={1400}
+                    height={1400}
+                    priority
+                    className={styles.logo}
+                />
+
+                {/* <p className={styles.tagline}>Psychedelic rock from Berlin</p> */}
+
+                <div className={styles.video}>
+                    <iframe
+                        src="https://www.youtube.com/embed/z4UvI-4D9dk"
+                        title="Lunar Space Tapes music video"
+                        allowFullScreen
+                    />
+                </div>
+            </header>
+
+            <section className={[styles.section, styles.bioSection].join(" ")}>
+                <p className={styles.bio}>
+                    Lunar Space Tapes is a psychedelic rock trio from Berlin.
+                    Founded by guitarist and songwriter Chris M Blyth, the band
+                    combines melodic songwriting, spacey guitars, hypnotic grooves
+                    and improvisation. The goal is simple: to write great songs,
+                    launch them into the universe and see where they land.
+                </p>
+            </section>
+
+            <Image
+                src="/lunarspacetapes/bandfoto.jpg"
+                alt="Lunar Space Tapes"
+                width={1600}
+                height={1000}
+                className={styles.bandPhoto}
+            />
+
+
+
+            <section className={styles.section}>
+                <h2>Line-up</h2>
+
+                <p>Chris M Blyth — Vocals / Guitar</p>
+                <p>Stefan Meinking — Drums</p>
+                <p>Christian Nass — Bass</p>
+            </section>
+
+            <section className={styles.section}>
+                <h2>Listen & Follow</h2>
+
+                <div className={styles.links}>
+                    <a href="https://soundcloud.com/lunarspacetapes"
+                        target="_blank"
+                        rel="noopener noreferrer">SoundCloud</a>
+                    <a href="https://instagram.com/lunarspacetapes"
+                        target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
+                    {/* <a href="https://youtu.be/z4UvI-4D9dk">YouTube</a> */}
+                </div>
+            </section>
+
+            <section className={styles.section}>
+                <a
+                    href="/lunarspacetapes/lunar-space-tapes-techrider.pdf"
+                    className={styles.button}
+                >
+                    Download Tech Rider
+                </a>
+            </section>
+
+            <footer className={styles.footer}>
+                <h2>Booking</h2>
+                <a href="mailto:chrismblyth@gmail.com">
+                    chrismblyth@gmail.com
+                </a>
+
+                <br />
+                <br />
+
+                <a href="tel:+4915168634515">
+                    +49 151 686 34515
+                </a>
+            </footer>
+        </main>
+    );
+}
