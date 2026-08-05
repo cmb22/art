@@ -1,10 +1,8 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
-
-export const metadata = {
-    title: "Lunar Space Tapes — Electronic Press Kit",
-    description: "Psychedelic rock trio from Berlin.",
-};
 
 const externalLinkProps = {
     target: "_blank",
@@ -12,6 +10,25 @@ const externalLinkProps = {
 } as const;
 
 export default function LunarSpaceTapesEPK() {
+    const [videoOpen, setVideoOpen] = useState(false);
+
+    useEffect(() => {
+        document.body.style.overflow = videoOpen ? "hidden" : "";
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setVideoOpen(false);
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.body.style.overflow = "";
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [videoOpen]);
+
     return (
         <main id="lunar-epk" className={styles.page}>
             <header className={styles.hero}>
@@ -28,15 +45,34 @@ export default function LunarSpaceTapesEPK() {
                 </div>
 
                 <div className={styles.contentWidth}>
-                    <div className={styles.video}>
-                        <iframe
-                            src="https://www.youtube.com/embed/z4UvI-4D9dk"
-                            title="Lunar Space Tapes — You and I live"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerPolicy="strict-origin-when-cross-origin"
-                            allowFullScreen
+                    <button
+                        type="button"
+                        className={styles.videoPreview}
+                        onClick={() => setVideoOpen(true)}
+                        aria-label="Play You and I"
+                    >
+                        <Image
+                            src="/lunarspacetapes/bandfoto.jpg"
+                            alt="You and I video preview"
+                            width={1600}
+                            height={900}
+                            className={styles.videoThumbnail}
+                            sizes="(max-width: 700px) calc(100vw - 24px), 1100px"
                         />
-                    </div>
+
+                        <Image
+                            src="/lunarspacetapes/you-and-I-transparent.png"
+                            alt=""
+                            aria-hidden="true"
+                            width={1200}
+                            height={500}
+                            className={styles.videoTitle}
+                        />
+
+                        <span className={styles.playButton} aria-hidden="true">
+                            ▶
+                        </span>
+                    </button>
                 </div>
             </header>
 
@@ -54,7 +90,7 @@ export default function LunarSpaceTapesEPK() {
             <section className={styles.photoSection}>
                 <Image
                     src="/lunarspacetapes/bandfoto.jpg"
-                    alt="Lunar Space Tapes band photo"
+                    alt="Lunar Space Tapes"
                     width={1600}
                     height={1000}
                     className={styles.bandPhoto}
@@ -111,7 +147,7 @@ export default function LunarSpaceTapesEPK() {
             </section>
 
             <section className={styles.section}>
-                <h2>Technical information</h2>
+                <h2>Technical Information</h2>
 
                 <a
                     href="/lunarspacetapes/lunar-space-tapes-techrider.pdf"
@@ -140,6 +176,38 @@ export default function LunarSpaceTapesEPK() {
 
                 <p className={styles.location}>Berlin, Germany</p>
             </footer>
+
+            {videoOpen && (
+                <div
+                    className={styles.lightbox}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="You and I video"
+                    onClick={() => setVideoOpen(false)}
+                >
+                    <div
+                        className={styles.lightboxContent}
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <button
+                            type="button"
+                            className={styles.closeButton}
+                            onClick={() => setVideoOpen(false)}
+                            aria-label="Close video"
+                        >
+                            ×
+                        </button>
+
+                        <iframe
+                            src="https://www.youtube.com/embed/z4UvI-4D9dk?autoplay=1&rel=0"
+                            title="Lunar Space Tapes — You and I"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                        />
+                    </div>
+                </div>
+            )}
         </main>
     );
 }
