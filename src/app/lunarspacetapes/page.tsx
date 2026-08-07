@@ -52,7 +52,7 @@ export default function LunarSpaceTapesEPK() {
                         aria-label="Play You and I"
                     >
                         <Image
-                            src="/lunarspacetapes/bandfoto.jpg"
+                            src="/lunarspacetapes/you-and-I.png"
                             alt="You and I video preview"
                             width={1600}
                             height={900}
@@ -60,14 +60,14 @@ export default function LunarSpaceTapesEPK() {
                             sizes="(max-width: 700px) calc(100vw - 24px), 1100px"
                         />
 
-                        <Image
+                        {/* <Image
                             src="/lunarspacetapes/you-and-I-transparent.png"
                             alt=""
                             aria-hidden="true"
                             width={1200}
                             height={500}
                             className={styles.videoTitle}
-                        />
+                        /> */}
 
                         <span className={styles.playButton} aria-hidden="true">
                             ▶

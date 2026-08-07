@@ -45,7 +45,8 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 0;
+    /* border: 0; */
+    border: 1px solid #666;
     background: transparent;
     cursor: pointer;
 }
