@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
+import { translations, type Language } from "./translations";
 
 const externalLinkProps = {
     target: "_blank",
@@ -11,6 +12,9 @@ const externalLinkProps = {
 
 export default function LunarSpaceTapesEPK() {
     const [videoOpen, setVideoOpen] = useState(false);
+    const [language, setLanguage] = useState<Language>("en");
+
+    const t = translations[language];
 
     useEffect(() => {
         document.body.style.overflow = videoOpen ? "hidden" : "";
@@ -31,6 +35,22 @@ export default function LunarSpaceTapesEPK() {
 
     return (
         <main id="lunar-epk" className={styles.page}>
+            <div className={styles.languageSwitcher}>
+                <select
+                    value={language}
+                    onChange={(event) =>
+                        setLanguage(event.target.value as Language)
+                    }
+                    className={styles.languageSelect}
+                    aria-label="Select language"
+                >
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+
+            </div>
+
             <header className={styles.hero}>
                 <div className={styles.logoWrapper}>
                     <Image
@@ -49,42 +69,31 @@ export default function LunarSpaceTapesEPK() {
                         type="button"
                         className={styles.videoPreview}
                         onClick={() => setVideoOpen(true)}
-                        aria-label="Play You and I"
+                        aria-label={t.playVideo}
                     >
                         <Image
                             src="/lunarspacetapes/you-and-I.png"
-                            alt="You and I video preview"
+                            alt={t.videoPreview}
                             width={1600}
                             height={900}
                             className={styles.videoThumbnail}
                             sizes="(max-width: 700px) calc(100vw - 24px), 1100px"
                         />
 
-                        {/* <Image
-                            src="/lunarspacetapes/you-and-I-transparent.png"
-                            alt=""
+                        <span
+                            className={styles.playButton}
                             aria-hidden="true"
-                            width={1200}
-                            height={500}
-                            className={styles.videoTitle}
-                        /> */}
-
-                        <span className={styles.playButton} aria-hidden="true">
+                        >
                             ▶
                         </span>
                     </button>
                 </div>
             </header>
 
-            <section className={`${styles.section} ${styles.bioSection}`}>
-                <p className={styles.bio}>
-                    Lunar Space Tapes is a psychedelic rock trio from Berlin.
-                    Founded by guitarist and songwriter Chris M Blyth, the band
-                    combines melodic songwriting, spacey guitars, hypnotic
-                    grooves and improvisation. The goal is simple: to write
-                    great songs, launch them into the universe and see where
-                    they land.
-                </p>
+            <section
+                className={`${styles.section} ${styles.bioSection}`}
+            >
+                <p className={styles.bio}>{t.bio}</p>
             </section>
 
             <section className={styles.photoSection}>
@@ -99,28 +108,28 @@ export default function LunarSpaceTapesEPK() {
             </section>
 
             <section className={styles.section}>
-                <h2>Line-up</h2>
+                <h2>{t.lineup}</h2>
 
                 <div className={styles.lineup}>
                     <p>
                         <strong>Chris M Blyth</strong>
-                        <span>Vocals / Guitar</span>
+                        <span>{t.vocalsGuitar}</span>
                     </p>
 
                     <p>
                         <strong>Stefan Meinking</strong>
-                        <span>Drums</span>
+                        <span>{t.drums}</span>
                     </p>
 
                     <p>
                         <strong>Christian Nass</strong>
-                        <span>Bass</span>
+                        <span>{t.bass}</span>
                     </p>
                 </div>
             </section>
 
             <section className={styles.section}>
-                <h2>Listen &amp; Follow</h2>
+                <h2>{t.listenFollow}</h2>
 
                 <div className={styles.links}>
                     <a
@@ -147,7 +156,7 @@ export default function LunarSpaceTapesEPK() {
             </section>
 
             <section className={styles.section}>
-                <h2>Technical Information</h2>
+                <h2>{t.technicalInformation}</h2>
 
                 <a
                     href="/lunarspacetapes/lunar-space-tapes-techrider.pdf"
@@ -155,12 +164,12 @@ export default function LunarSpaceTapesEPK() {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    View Tech Rider
+                    {t.viewTechRider}
                 </a>
             </section>
 
             <footer className={styles.footer}>
-                <h2>Booking &amp; Contact</h2>
+                <h2>{t.bookingContact}</h2>
 
                 <p>Chris M Blyth</p>
 
@@ -174,7 +183,7 @@ export default function LunarSpaceTapesEPK() {
                     </a>
                 </div>
 
-                <p className={styles.location}>Berlin, Germany</p>
+                <p className={styles.location}>{t.location}</p>
             </footer>
 
             {videoOpen && (
@@ -182,7 +191,7 @@ export default function LunarSpaceTapesEPK() {
                     className={styles.lightbox}
                     role="dialog"
                     aria-modal="true"
-                    aria-label="You and I video"
+                    aria-label={t.videoDialog}
                     onClick={() => setVideoOpen(false)}
                 >
                     <div
@@ -193,7 +202,7 @@ export default function LunarSpaceTapesEPK() {
                             type="button"
                             className={styles.closeButton}
                             onClick={() => setVideoOpen(false)}
-                            aria-label="Close video"
+                            aria-label={t.closeVideo}
                         >
                             ×
                         </button>
