@@ -318,6 +318,19 @@
     outline-offset: 4px;
 }
 
+
+
+@media (max-width: 700px) {
+    .downloadLinks {
+        flex-direction: column;
+    }
+
+    .downloadLinks .button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
 @media (max-width: 700px) {
 
     .contentWidth,
@@ -416,5 +429,57 @@
     .languageSwitcher {
         top: 12px;
         right: 12px;
+    }
+}
+
+
+@media print {
+
+    .languageSwitcher,
+    .videoPreview,
+    .links,
+    .technicalSection,
+    .listenFollow {
+        display: none !important;
+    }
+
+    .page {
+        background: #fff;
+        color: #000;
+    }
+
+    .section,
+    .footer {
+        width: 100%;
+        padding: 30px 0;
+        border-color: #bbb;
+    }
+
+    .footer {
+        border-top: 2px solid #000;
+    }
+
+    .footer h2 {
+        font-size: 28px;
+    }
+
+    .contactLinks a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .location {
+        color: #444;
+    }
+
+    .memberPhoto,
+    .bandPhoto {
+        break-inside: avoid;
+    }
+
+    .member,
+    .section,
+    .footer {
+        break-inside: avoid;
     }
 }

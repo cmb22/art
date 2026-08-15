@@ -14,6 +14,8 @@ export const translations = {
         videoPreview: "You and I video preview",
         videoDialog: "You and I video",
         closeVideo: "Close video",
+        selectLanguage: "Select language",
+        downloadEPK: "Download EPK",
     },
 
     de: {
@@ -31,6 +33,8 @@ export const translations = {
         videoPreview: "You and I Videovorschau",
         videoDialog: "You and I Video",
         closeVideo: "Video schließen",
+        selectLanguage: "Sprache auswählen",
+        downloadEPK: "EPK herunterladen",
     },
 
     fr: {
@@ -48,6 +52,8 @@ export const translations = {
         videoPreview: "Aperçu vidéo de You and I",
         videoDialog: "Vidéo You and I",
         closeVideo: "Fermer la vidéo",
+        selectLanguage: "Choisir la langue",
+        downloadEPK: "Télécharger l’EPK",
     },
 } as const;
 

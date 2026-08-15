@@ -10,11 +10,37 @@ const externalLinkProps = {
     rel: "noopener noreferrer",
 } as const;
 
+const supportedLanguages: Language[] = ["en", "de", "fr"];
+
 export default function LunarSpaceTapesEPK() {
     const [videoOpen, setVideoOpen] = useState(false);
     const [language, setLanguage] = useState<Language>("en");
 
     const t = translations[language];
+
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem(
+            "lunar-space-tapes-language"
+        ) as Language | null;
+
+        if (
+            savedLanguage &&
+            supportedLanguages.includes(savedLanguage)
+        ) {
+            setLanguage(savedLanguage);
+            return;
+        }
+
+        const browserLanguage = navigator.language.toLowerCase();
+
+        if (browserLanguage.startsWith("de")) {
+            setLanguage("de");
+        } else if (browserLanguage.startsWith("fr")) {
+            setLanguage("fr");
+        } else {
+            setLanguage("en");
+        }
+    }, []);
 
     useEffect(() => {
         document.body.style.overflow = videoOpen ? "hidden" : "";
@@ -33,6 +59,19 @@ export default function LunarSpaceTapesEPK() {
         };
     }, [videoOpen]);
 
+    const handleLanguageChange = (
+        event: React.ChangeEvent<HTMLSelectElement>
+    ) => {
+        const newLanguage = event.target.value as Language;
+
+        setLanguage(newLanguage);
+
+        localStorage.setItem(
+            "lunar-space-tapes-language",
+            newLanguage
+        );
+    };
+
     return (
         <main
             id="lunar-epk"
@@ -42,11 +81,10 @@ export default function LunarSpaceTapesEPK() {
             <div className={styles.languageSwitcher}>
                 <select
                     value={language}
-                    onChange={(event) =>
-                        setLanguage(event.target.value as Language)
-                    }
+                    onChange={handleLanguageChange}
                     className={styles.languageSelect}
-                    aria-label="Select language"
+                    aria-label={t.selectLanguage}
+                    title={t.selectLanguage}
                 >
                     <option value="en">English</option>
                     <option value="de">Deutsch</option>
@@ -123,7 +161,7 @@ export default function LunarSpaceTapesEPK() {
                             alt="Chris M Blyth"
                             width={700}
                             height={900}
-                            className={styles.memberPhoto}
+                            className={`${styles.memberPhoto} ${styles.memberPhotoChris}`}
                             sizes="(max-width: 700px) 100vw, 33vw"
                         />
                     </div>
@@ -137,7 +175,7 @@ export default function LunarSpaceTapesEPK() {
                             alt="Stefan Meinking"
                             width={700}
                             height={900}
-                            className={styles.memberPhoto}
+                            className={`${styles.memberPhoto} ${styles.memberPhotoStefan}`}
                             sizes="(max-width: 700px) 100vw, 33vw"
                         />
                     </div>
@@ -151,14 +189,17 @@ export default function LunarSpaceTapesEPK() {
                             alt="Christian Nass"
                             width={700}
                             height={900}
-                            className={styles.memberPhoto}
+                            className={`${styles.memberPhoto} ${styles.memberPhotoChristian}`}
                             sizes="(max-width: 700px) 100vw, 33vw"
                         />
                     </div>
                 </div>
             </section>
 
-            <section className={styles.section}>
+            <section
+                className={[styles.section, styles.listenFollow].join(" ")}
+                id="listen-follow"
+            >
                 <h2>{t.listenFollow}</h2>
 
                 <div className={styles.links}>
@@ -185,12 +226,14 @@ export default function LunarSpaceTapesEPK() {
                 </div>
             </section>
 
-            <section className={styles.section}>
+            <section
+                className={`${styles.section} ${styles.technicalSection}`}
+            >
                 <h2>{t.technicalInformation}</h2>
 
                 <a
                     href="/lunarspacetapes/lunar-space-tapes-techrider.pdf"
-                    className={styles.button}
+                    className={`${styles.button} ${styles.techRiderButton}`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -198,10 +241,23 @@ export default function LunarSpaceTapesEPK() {
                 </a>
             </section>
 
+            <section className={styles.section}>
+                <h2>Electronic Press Kit</h2>
+                <a
+                    href="/lunarspacetapes/epk.pdf"
+                    download="Lunar-Space-Tapes-EPK.pdf"
+                    className={styles.button}
+                >
+                    {t.downloadEPK}
+                </a>
+            </section>
+
             <footer className={styles.footer}>
                 <h2>{t.bookingContact}</h2>
 
-                <p>Chris M Blyth</p>
+                <p className={styles.contactName}>
+                    Chris M Blyth
+                </p>
 
                 <div className={styles.contactLinks}>
                     <a href="mailto:chrismblyth@gmail.com">
@@ -213,7 +269,9 @@ export default function LunarSpaceTapesEPK() {
                     </a>
                 </div>
 
-                <p className={styles.location}>{t.location}</p>
+                <p className={styles.location}>
+                    {t.location}
+                </p>
             </footer>
 
             {videoOpen && (
@@ -226,12 +284,16 @@ export default function LunarSpaceTapesEPK() {
                 >
                     <div
                         className={styles.lightboxContent}
-                        onClick={(event) => event.stopPropagation()}
+                        onClick={(event) =>
+                            event.stopPropagation()
+                        }
                     >
                         <button
                             type="button"
                             className={styles.closeButton}
-                            onClick={() => setVideoOpen(false)}
+                            onClick={() =>
+                                setVideoOpen(false)
+                            }
                             aria-label={t.closeVideo}
                         >
                             ×
