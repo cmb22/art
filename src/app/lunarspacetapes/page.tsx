@@ -34,7 +34,11 @@ export default function LunarSpaceTapesEPK() {
     }, [videoOpen]);
 
     return (
-        <main id="lunar-epk" className={styles.page}>
+        <main
+            id="lunar-epk"
+            className={styles.page}
+            lang={language}
+        >
             <div className={styles.languageSwitcher}>
                 <select
                     value={language}
@@ -48,7 +52,6 @@ export default function LunarSpaceTapesEPK() {
                     <option value="de">Deutsch</option>
                     <option value="fr">Français</option>
                 </select>
-
             </div>
 
             <header className={styles.hero}>
@@ -111,20 +114,47 @@ export default function LunarSpaceTapesEPK() {
                 <h2>{t.lineup}</h2>
 
                 <div className={styles.lineup}>
-                    <p>
+                    <div className={styles.member}>
                         <strong>Chris M Blyth</strong>
                         <span>{t.vocalsGuitar}</span>
-                    </p>
 
-                    <p>
+                        <Image
+                            src="/lunarspacetapes/chris.jpg"
+                            alt="Chris M Blyth"
+                            width={700}
+                            height={900}
+                            className={styles.memberPhoto}
+                            sizes="(max-width: 700px) 100vw, 33vw"
+                        />
+                    </div>
+
+                    <div className={styles.member}>
                         <strong>Stefan Meinking</strong>
                         <span>{t.drums}</span>
-                    </p>
 
-                    <p>
+                        <Image
+                            src="/lunarspacetapes/stefan.jpg"
+                            alt="Stefan Meinking"
+                            width={700}
+                            height={900}
+                            className={styles.memberPhoto}
+                            sizes="(max-width: 700px) 100vw, 33vw"
+                        />
+                    </div>
+
+                    <div className={styles.member}>
                         <strong>Christian Nass</strong>
                         <span>{t.bass}</span>
-                    </p>
+
+                        <Image
+                            src="/lunarspacetapes/christian.jpg"
+                            alt="Christian Nass"
+                            width={700}
+                            height={900}
+                            className={styles.memberPhoto}
+                            sizes="(max-width: 700px) 100vw, 33vw"
+                        />
+                    </div>
                 </div>
             </section>
 

@@ -45,7 +45,6 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* border: 0; */
     border: 1px solid #666;
     background: transparent;
     cursor: pointer;
@@ -189,21 +188,45 @@
     gap: 24px;
 }
 
-.lineup p {
+.member {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin: 0;
     padding: 22px 0;
     border-top: 1px solid #666;
 }
 
-.lineup strong {
+.member {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 22px 0;
+    border-top: 1px solid #666;
+}
+
+.memberPhoto {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    margin-top: 14px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.member strong {
     font-size: 1.15rem;
 }
 
-.lineup span {
+.member span {
     color: #b5b5b5;
+}
+
+.memberPhoto {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 14px;
+    object-fit: cover;
 }
 
 .links {
@@ -273,6 +296,28 @@
     color: #a5a5a5;
 }
 
+.languageSwitcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.languageSelect {
+    padding: 9px 32px 9px 12px;
+    border: 1px solid #666;
+    border-radius: 0;
+    background: #000;
+    color: #f5f5f5;
+    font: inherit;
+    cursor: pointer;
+}
+
+.languageSelect:focus-visible {
+    outline: 2px solid #f5f5f5;
+    outline-offset: 4px;
+}
+
 @media (max-width: 700px) {
 
     .contentWidth,
@@ -302,8 +347,6 @@
     }
 
     .playButton {
-        /* right: 14px; */
-        /* bottom: 14px; */
         bottom: 10%;
         right: calc(50% - 32px);
         width: 64px;
@@ -335,6 +378,27 @@
         gap: 8px;
     }
 
+    .member {
+        padding: 22px 0 32px;
+    }
+
+    .member {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 22px 0;
+        border-top: 1px solid #666;
+    }
+
+    .memberPhoto {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        margin-top: 14px;
+        object-fit: cover;
+        object-position: center;
+    }
+
     .links {
         flex-direction: column;
     }
@@ -348,27 +412,9 @@
     .footer {
         padding: 50px 0 70px;
     }
-}
 
-.languageSelect {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-
-    padding: 9px 32px 9px 12px;
-
-    border: 1px solid #666;
-    border-radius: 0;
-
-    background: #000;
-    color: #f5f5f5;
-
-    font: inherit;
-    cursor: pointer;
-}
-
-.languageSelect:focus-visible {
-    outline: 2px solid #f5f5f5;
-    outline-offset: 4px;
+    .languageSwitcher {
+        top: 12px;
+        right: 12px;
+    }
 }
