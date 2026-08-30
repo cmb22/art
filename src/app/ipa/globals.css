@@ -688,3 +688,21 @@ h2 {
   font: inherit;
   cursor: pointer;
 }
+
+.trapTooltipAnchor {
+
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 3;
+
+}
+
+.trapTooltipAnchor .trapSound {
+
+  position: static;
+
+  transform: none;
+
+}
