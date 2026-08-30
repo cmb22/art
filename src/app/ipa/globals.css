@@ -1,0 +1,303 @@
+*{box-sizing:border-box}
+body{margin:0;background:#f5f4f0;color:#20201e;font-family:Arial,Helvetica,sans-serif}
+button{font:inherit}
+.page{width:min(1080px,calc(100% - 32px));margin:auto;padding:44px 0 72px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.14em;color:#77736c;margin:0}
+h1{font-family:Georgia,serif;font-weight:400;font-size:58px;letter-spacing:-2px;margin:8px 0}
+.intro{color:#77736c;margin:0 0 30px}
+.card,.detail{background:#fff;border:1px solid #ddd9d0;border-radius:16px;padding:26px;margin-top:18px}
+h2{margin:0 0 22px;font-family:Georgia,serif;font-weight:400;font-size:28px}
+
+/* Simple learner-facing table */
+.simpleTable{
+  display:grid;
+  grid-template-columns:100px repeat(3,1fr);
+  border-top:1px solid #e5e2dc;
+  border-left:1px solid #e5e2dc;
+  border-radius:10px;
+  overflow:hidden;
+}
+.tableBlank,.tableHead,.rowHead,.tableCell{
+  border-right:1px solid #e5e2dc;
+  border-bottom:1px solid #e5e2dc;
+}
+.tableBlank,.tableHead,.rowHead{background:#faf9f6}
+.tableHead{padding:14px;text-align:center;font-size:13px;font-weight:700;color:#66625b}
+.rowHead{padding:14px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;font-size:13px;color:#66625b}.rowHead strong{font-size:14px}.rowHead span{font-size:10px;line-height:1.35;font-weight:400;color:#8a867e}
+.tableCell{min-height:78px;padding:12px;display:flex;align-items:center;justify-content:center}
+.soundGroup{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+
+/* Shared clickable sound style */
+.sound,.trapSound{
+  border:1px solid #c9c5bc;
+  background:#fff;
+  cursor:pointer;
+  font-weight:650;
+  transition:transform .12s,border-color .12s,background .12s;
+}
+.sound{min-width:50px;height:42px;padding:0 10px;border-radius:11px;font-size:19px}
+.sound.long,.trapSound.long{border-width:2px}
+.sound:hover,.trapSound:hover{border-color:#222}
+.sound.active,.trapSound.active{background:#20201e;color:#fff;border-color:#20201e}
+
+/* IPA-style German-only vowel trapezoid */
+.sectionHeading h2{margin-bottom:5px}
+.sectionHeading p{margin:0;color:#77736c;font-size:14px}
+.trapezoidScroller{overflow-x:auto;padding:8px 0 0}
+.trapezoid{
+  position:relative;
+  width:820px;
+  height:540px;
+  margin:18px auto 0;
+  padding-top:1px;
+}
+.trapezoid svg{position:absolute;left:60px;top:38px;width:700px;height:465px;overflow:visible}
+.trapezoid svg polygon,.trapezoid svg line{
+  fill:none;
+  stroke:#aaa69d;
+  stroke-width:.55;
+  vector-effect:non-scaling-stroke;
+}
+.axisLabel{position:absolute;top:3px;color:#77736c;font-size:12px;font-weight:700;letter-spacing:.03em}
+.frontLabel{left:70px}
+.centralLabel{left:390px}
+.backLabel{right:55px}
+
+.trapSound{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  min-width:48px;
+  height:40px;
+  padding:0 8px;
+  border-radius:7px;
+  font-size:19px;
+  z-index:2;
+}
+.trapSound:hover{transform:translate(-50%,-50%) scale(1.08);z-index:4}
+
+.diphthongs{display:flex;gap:12px;flex-wrap:wrap}
+.diph{min-width:78px}
+.detail{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:center}
+.ipa{font-family:Georgia,serif;font-size:48px}
+.detail p{margin:5px 0;color:#77736c}
+.detail a{font-size:13px;color:#333}
+.replay{border:0;border-radius:9px;background:#222;color:#fff;padding:11px 16px;cursor:pointer}
+.error{grid-column:1/-1;color:#a32626}
+
+@media(max-width:760px){
+  .page{width:calc(100% - 20px);padding-top:28px}
+  h1{font-size:44px}
+  .card{padding:16px;overflow:hidden}
+  .simpleTable{min-width:680px}
+  .card:has(.simpleTable){overflow-x:auto}
+  .trapezoid{margin-left:0}
+  .detail{grid-template-columns:70px 1fr}
+  .replay{grid-column:1/-1}
+}
+/* v6: overview aligns every sound with its opening degree */
+.simpleTable.detailed{
+  grid-template-columns:92px 132px repeat(3,1fr);
+}
+.opennessHead{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+  font-weight:700;
+  color:#77736c;
+}
+.lengthHead,.openness{
+  background:#faf9f6;
+  border-right:1px solid #e5e2dc;
+  border-bottom:1px solid #e5e2dc;
+}
+.lengthHead{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:700;
+}
+.openness{
+  display:flex;
+  align-items:center;
+  padding:10px 12px;
+  color:#77736c;
+  font-size:12px;
+}
+.longBlock{grid-row:2 / span 3}
+.shortBlock{grid-row:5 / span 3}
+.neutralBlock{grid-row:8 / span 2}
+.simpleTable.detailed .tableCell{min-height:64px}
+@media(max-width:760px){
+  .simpleTable.detailed{min-width:820px}
+}
+
+/* v7: clearly visible rear boundary of the vowel trapezoid */
+.trapezoid svg .backEdge{
+  stroke:#77736c;
+  stroke-width:1.35;
+}
+
+/* consonant inventory, ready for audio URLs in the next data pass */
+.consonantIntro{margin:-12px 0 20px;color:#77736c;font-size:14px}
+.consonantGrid{border-top:1px solid #e5e2dc}
+.consonantRow{
+  display:grid;
+  grid-template-columns:190px 1fr;
+  gap:18px;
+  align-items:center;
+  min-height:70px;
+  border-bottom:1px solid #e5e2dc;
+}
+.consonantRow>strong{font-size:13px;color:#66625b}
+.consonantRow .soundGroup{justify-content:flex-start}
+.consonantSound{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:50px;
+  height:42px;
+  padding:0 10px;
+  border:1px solid #c9c5bc;
+  border-radius:11px;
+  background:#fff;
+  font-size:19px;
+  font-weight:650;
+}
+@media(max-width:760px){
+  .consonantRow{grid-template-columns:1fr;gap:8px;padding:12px 0}
+}
+
+/* v8: the missing FAR-RIGHT guide/boundary, not the central vertical line */
+.trapezoid svg .farBackEdge{
+  stroke:#aaa69d;
+  stroke-width:.55;
+  vector-effect:non-scaling-stroke;
+}
+.consonantSound{cursor:pointer;font-family:Arial,Helvetica,sans-serif}
+.consonantSound:hover{border-color:#222;background:#faf9f6}
+.consonantSound:active{background:#20201e;color:#fff}
+
+/* v9: actual far-right vertical boundary of the mouth-position chart */
+
+/* v10: actual right edge of the trapezoid, at the same x-coordinate as its top/bottom endpoints */
+.trapezoid svg .rightTrapezoidEdge{
+  stroke:#aaa69d;
+  stroke-width:.8;
+  vector-effect:non-scaling-stroke;
+}
+
+/* v11: keep every German vowel inside/on the vowel trapezoid */
+.trapezoid svg{
+  left:55px;
+  width:720px;
+}
+
+/* v12 — single coordinate system: SVG geometry and vowel buttons share .trapezoid */
+.trapezoid{
+  position:relative;
+  width:820px;
+  height:540px;
+  margin:18px auto 0;
+}
+.trapezoid .vowelGeometry{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+.trapezoid .vowelGeometry polygon,
+.trapezoid .vowelGeometry line{
+  fill:none;
+  stroke:#aaa69d;
+  stroke-width:.45;
+  vector-effect:non-scaling-stroke;
+}
+.trapezoid .vowelGeometry .rightTrapezoidEdge{
+  stroke:#aaa69d;
+  stroke-width:.8;
+}
+.trapezoid .trapSound{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  z-index:2;
+}
+
+/* v13 — learner table: length → opening → lip rounding → tongue position */
+.simpleTable.detailed.lipTable{
+  grid-template-columns:82px 128px 118px repeat(3,1fr);
+}
+.lipLabel{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px;
+  background:#faf9f6;
+  border-right:1px solid #e5e2dc;
+  border-bottom:1px solid #e5e2dc;
+  color:#77736c;
+  font-size:12px;
+}
+.longBlockV13{grid-row:2 / span 5}
+.shortBlockV13{grid-row:7 / span 5}
+.neutralBlockV13{grid-row:12 / span 2}
+
+.openLongClosed{grid-row:2 / span 2}
+.openLongMid{grid-row:4 / span 2}
+.openLongOpen{grid-row:6}
+
+.openShortClosed{grid-row:7 / span 2}
+.openShortOpen{grid-row:9 / span 2}
+.openShortA{grid-row:11}
+
+.neutralMiddle{grid-row:12}
+.neutralOpen{grid-row:13}
+
+.simpleTable.detailed.lipTable .tableCell{min-height:58px}
+@media(max-width:760px){
+  .simpleTable.detailed.lipTable{min-width:940px}
+}
+
+/* v14 — rounding is vertical beneath each tongue-position heading */
+.vowelTableV14{
+  grid-template-columns:82px 128px repeat(6,minmax(78px,1fr));
+}
+.vowelTableV14 .lengthCol{grid-column:1;grid-row:1 / span 2}
+.vowelTableV14 .openingCol{grid-column:2;grid-row:1 / span 2}
+.vowelTableV14 .frontHead{grid-column:3 / span 2}
+.vowelTableV14 .centralHead{grid-column:5 / span 2}
+.vowelTableV14 .backHead{grid-column:7 / span 2}
+
+.vowelTableV14 .frontUnrounded{grid-column:3}
+.vowelTableV14 .frontRounded{grid-column:4}
+.vowelTableV14 .centralUnrounded{grid-column:5}
+.vowelTableV14 .centralRounded{grid-column:6}
+.vowelTableV14 .backUnrounded{grid-column:7}
+.vowelTableV14 .backRounded{grid-column:8}
+
+.vowelTableV14 .tableSubHead{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:6px 4px;
+  background:#f7f5f0;
+  border-right:1px solid #e5e2dc;
+  border-bottom:1px solid #e5e2dc;
+  color:#77736c;
+  font-size:11px;
+  font-weight:600;
+}
+.vowelTableV14 .positionHead{
+  border-bottom:1px solid #e5e2dc;
+}
+.vowelTableV14 .longV14{grid-row:3 / span 3}
+.vowelTableV14 .shortV14{grid-row:6 / span 3}
+.vowelTableV14 .neutralV14{grid-row:9 / span 2}
+.vowelTableV14 .tableCell{min-height:58px}
+
+@media(max-width:900px){
+  .vowelTableV14{min-width:940px}
+}

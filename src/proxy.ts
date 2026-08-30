@@ -43,6 +43,7 @@ export const proxy = (request: NextRequest) => {
 
     if (
         pathname.startsWith("/lunarspacetapes") ||
+        pathname.startsWith("/ipa") ||
         pathname.startsWith("/_next") ||
         pathname.startsWith("/api") ||
         pathname.includes(".")
