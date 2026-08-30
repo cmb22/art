@@ -1,7 +1,6 @@
-// src/proxy.ts
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
-import { defaultLocale, isLocale, locales } from "@/app/i18n/config"
+import { defaultLocale, isLocale } from "@/app/i18n/config"
 
 const localeCookieName = "NEXT_LOCALE"
 
