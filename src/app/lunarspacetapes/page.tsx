@@ -152,46 +152,46 @@ export default function LunarSpaceTapesEPK() {
                 <h2>{t.lineup}</h2>
 
                 <div className={styles.lineup}>
-                    <div className={styles.member}>
-                        <strong>Chris M Blyth</strong>
-                        <span>{t.vocalsGuitar}</span>
 
-                        <Image
-                            src="/lunarspacetapes/chris.jpg"
-                            alt="Chris M Blyth"
-                            width={700}
-                            height={900}
-                            className={`${styles.memberPhoto} ${styles.memberPhotoChris}`}
-                            sizes="(max-width: 700px) 100vw, 33vw"
-                        />
-                    </div>
 
                     <div className={styles.member}>
                         <strong>Stefan Meinking</strong>
                         <span>{t.drums}</span>
 
-                        <Image
+                        {/* <Image
                             src="/lunarspacetapes/stefan.jpg"
                             alt="Stefan Meinking"
                             width={700}
                             height={900}
                             className={`${styles.memberPhoto} ${styles.memberPhotoStefan}`}
                             sizes="(max-width: 700px) 100vw, 33vw"
-                        />
+                        /> */}
                     </div>
+                    <div className={styles.member}>
+                        <strong>Chris M Blyth</strong>
+                        <span>{t.vocalsGuitar}</span>
 
+                        {/* <Image
+                            src="/lunarspacetapes/chris.jpg"
+                            alt="Chris M Blyth"
+                            width={700}
+                            height={900}
+                            className={`${styles.memberPhoto} ${styles.memberPhotoChris}`}
+                            sizes="(max-width: 700px) 100vw, 33vw"
+                        /> */}
+                    </div>
                     <div className={styles.member}>
                         <strong>Christian Nass</strong>
                         <span>{t.bass}</span>
 
-                        <Image
+                        {/* <Image
                             src="/lunarspacetapes/christian.jpg"
                             alt="Christian Nass"
                             width={700}
                             height={900}
                             className={`${styles.memberPhoto} ${styles.memberPhotoChristian}`}
                             sizes="(max-width: 700px) 100vw, 33vw"
-                        />
+                        /> */}
                     </div>
                 </div>
             </section>
