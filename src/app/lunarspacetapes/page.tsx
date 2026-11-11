@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -12,11 +13,74 @@ const externalLinkProps = {
 
 const supportedLanguages: Language[] = ["en", "de", "fr"];
 
+const videos = [
+    {
+        id: "z4UvI-4D9dk",
+        title: "You and I",
+        thumbnail: "/lunarspacetapes/you-and-I.png",
+        local: true,
+    },
+    {
+        id: "qkbhrRzQwEE",
+        title: "Lunar Space Tapes — Live",
+        thumbnail:
+            "https://i.ytimg.com/vi/qkbhrRzQwEE/hqdefault.jpg",
+        local: false,
+    },
+];
+
+// SoundCloud recordings
+// For private tracks, use the API URL including secret_token.
+const audioTracks = [
+    {
+        title: "Flower Girl",
+        url: "https://api.soundcloud.com/tracks/soundcloud:tracks:2436078738?secret_token=s-9kc5mPUV2d4",
+    },
+    {
+        title: "Gateway",
+        url: "https://api.soundcloud.com/tracks/soundcloud:tracks:2436077208?secret_token=s-dXuMERsM5sy",
+    },
+    {
+        title: "Lucius Clouds See Saw Nine",
+        url: "https://api.soundcloud.com/tracks/soundcloud:tracks:2436074181?secret_token=s-AdxwhTouNTu",
+    },
+];
+
+const audioSectionTitles: Record<Language, string> = {
+    en: "Listen to Our Music",
+    de: "Unsere Musik",
+    fr: "Écoutez notre musique",
+};
+
+function getSoundCloudPlayerUrl(trackUrl: string) {
+    const params = new URLSearchParams({
+        url: trackUrl,
+        color: "#333333",
+        auto_play: "false",
+        hide_related: "true",
+        show_comments: "false",
+        show_user: "false",
+        show_reposts: "false",
+        show_teaser: "false",
+        visual: "false",
+    });
+
+    return `https://w.soundcloud.com/player/?${params.toString()}`;
+}
+
 export default function LunarSpaceTapesEPK() {
-    const [videoOpen, setVideoOpen] = useState(false);
-    const [language, setLanguage] = useState<Language>("en");
+    const [selectedVideo, setSelectedVideo] = useState<
+        string | null
+    >(null);
+
+    const [language, setLanguage] =
+        useState<Language>("en");
 
     const t = translations[language];
+
+    const availableTracks = audioTracks.filter(
+        (track) => track.url.trim().length > 0
+    );
 
     useEffect(() => {
         const savedLanguage = localStorage.getItem(
@@ -31,7 +95,8 @@ export default function LunarSpaceTapesEPK() {
             return;
         }
 
-        const browserLanguage = navigator.language.toLowerCase();
+        const browserLanguage =
+            navigator.language.toLowerCase();
 
         if (browserLanguage.startsWith("de")) {
             setLanguage("de");
@@ -43,11 +108,13 @@ export default function LunarSpaceTapesEPK() {
     }, []);
 
     useEffect(() => {
-        document.body.style.overflow = videoOpen ? "hidden" : "";
+        document.body.style.overflow = selectedVideo
+            ? "hidden"
+            : "";
 
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
-                setVideoOpen(false);
+                setSelectedVideo(null);
             }
         };
 
@@ -55,14 +122,18 @@ export default function LunarSpaceTapesEPK() {
 
         return () => {
             document.body.style.overflow = "";
-            window.removeEventListener("keydown", handleKeyDown);
+            window.removeEventListener(
+                "keydown",
+                handleKeyDown
+            );
         };
-    }, [videoOpen]);
+    }, [selectedVideo]);
 
     const handleLanguageChange = (
         event: React.ChangeEvent<HTMLSelectElement>
     ) => {
-        const newLanguage = event.target.value as Language;
+        const newLanguage =
+            event.target.value as Language;
 
         setLanguage(newLanguage);
 
@@ -71,6 +142,10 @@ export default function LunarSpaceTapesEPK() {
             newLanguage
         );
     };
+
+    const activeVideo = videos.find(
+        (video) => video.id === selectedVideo
+    );
 
     return (
         <main
@@ -106,28 +181,52 @@ export default function LunarSpaceTapesEPK() {
                 </div>
 
                 <div className={styles.contentWidth}>
-                    <button
-                        type="button"
-                        className={styles.videoPreview}
-                        onClick={() => setVideoOpen(true)}
-                        aria-label={t.playVideo}
-                    >
-                        <Image
-                            src="/lunarspacetapes/you-and-I.png"
-                            alt={t.videoPreview}
-                            width={1600}
-                            height={900}
-                            className={styles.videoThumbnail}
-                            sizes="(max-width: 700px) calc(100vw - 24px), 1100px"
-                        />
-
-                        <span
-                            className={styles.playButton}
-                            aria-hidden="true"
+                    {videos.map((video, index) => (
+                        <div
+                            key={video.id}
+                            style={{
+                                marginTop:
+                                    index === 0 ? 0 : "2rem",
+                            }}
                         >
-                            ▶
-                        </span>
-                    </button>
+                            <button
+                                type="button"
+                                className={styles.videoPreview}
+                                onClick={() =>
+                                    setSelectedVideo(video.id)
+                                }
+                                aria-label={`${t.playVideo}: ${video.title}`}
+                            >
+                                <Image
+                                    src={video.thumbnail}
+                                    alt={video.title}
+                                    width={1600}
+                                    height={900}
+                                    unoptimized={!video.local}
+                                    className={
+                                        styles.videoThumbnail
+                                    }
+                                    sizes="(max-width: 700px) calc(100vw - 24px), 1100px"
+                                />
+
+                                <span
+                                    className={styles.playButton}
+                                    aria-hidden="true"
+                                >
+                                    ▶
+                                </span>
+                            </button>
+
+                            <p
+                                style={{
+                                    textAlign: "center",
+                                    marginTop: "0.75rem",
+                                }}
+                            >
+                                {video.title}
+                            </p>
+                        </div>
+                    ))}
                 </div>
             </header>
 
@@ -148,83 +247,103 @@ export default function LunarSpaceTapesEPK() {
                 />
             </section>
 
+            {/* BAND LINEUP */}
+
             <section className={styles.section}>
                 <h2>{t.lineup}</h2>
 
                 <div className={styles.lineup}>
-
-
                     <div className={styles.member}>
                         <strong>Stefan Meinking</strong>
                         <span>{t.drums}</span>
-
-                        {/* <Image
-                            src="/lunarspacetapes/stefan.jpg"
-                            alt="Stefan Meinking"
-                            width={700}
-                            height={900}
-                            className={`${styles.memberPhoto} ${styles.memberPhotoStefan}`}
-                            sizes="(max-width: 700px) 100vw, 33vw"
-                        /> */}
                     </div>
+
                     <div className={styles.member}>
                         <strong>Chris M Blyth</strong>
                         <span>{t.vocalsGuitar}</span>
-
-                        {/* <Image
-                            src="/lunarspacetapes/chris.jpg"
-                            alt="Chris M Blyth"
-                            width={700}
-                            height={900}
-                            className={`${styles.memberPhoto} ${styles.memberPhotoChris}`}
-                            sizes="(max-width: 700px) 100vw, 33vw"
-                        /> */}
                     </div>
+
                     <div className={styles.member}>
                         <strong>Christian Nass</strong>
                         <span>{t.bass}</span>
-
-                        {/* <Image
-                            src="/lunarspacetapes/christian.jpg"
-                            alt="Christian Nass"
-                            width={700}
-                            height={900}
-                            className={`${styles.memberPhoto} ${styles.memberPhotoChristian}`}
-                            sizes="(max-width: 700px) 100vw, 33vw"
-                        /> */}
                     </div>
                 </div>
             </section>
 
+            {/* INSTAGRAM */}
+
             <section
-                className={[styles.section, styles.listenFollow].join(" ")}
+                className={[
+                    styles.section,
+                    styles.listenFollow,
+                ].join(" ")}
                 id="listen-follow"
             >
-                <h2>{t.listenFollow}</h2>
+                <h2>Instagram</h2>
 
                 <div className={styles.links}>
-                    <a
-                        href="https://soundcloud.com/lunarspacetapes"
-                        {...externalLinkProps}
-                    >
-                        SoundCloud
-                    </a>
-
                     <a
                         href="https://instagram.com/lunarspacetapes"
                         {...externalLinkProps}
                     >
-                        Instagram
-                    </a>
-
-                    <a
-                        href="https://youtu.be/z4UvI-4D9dk"
-                        {...externalLinkProps}
-                    >
-                        YouTube
+                        @lunarspacetapes
                     </a>
                 </div>
             </section>
+
+            {/* SOUNDCLOUD AUDIO */}
+
+            {availableTracks.length > 0 && (
+                <section
+                    className={styles.section}
+                    id="music"
+                >
+                    <h2>{audioSectionTitles[language]}</h2>
+
+                    <div
+                        style={{
+                            maxWidth: "800px",
+                            margin: "2rem auto 0",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "2rem",
+                        }}
+                    >
+                        {availableTracks.map((track) => (
+                            <div key={track.title}>
+                                <h3
+                                    style={{
+                                        marginBottom: "0.75rem",
+                                        textAlign: "center",
+                                    }}
+                                >
+                                    {track.title}
+                                </h3>
+
+                                <iframe
+                                    title={`Lunar Space Tapes — ${track.title}`}
+                                    width="100%"
+                                    height="166"
+                                    scrolling="no"
+                                    frameBorder="0"
+                                    allow="autoplay; encrypted-media"
+                                    loading="lazy"
+                                    src={getSoundCloudPlayerUrl(
+                                        track.url
+                                    )}
+                                    style={{
+                                        border: 0,
+                                        borderRadius: "4px",
+                                        display: "block",
+                                    }}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            {/* TECHNICAL RIDER */}
 
             <section
                 className={`${styles.section} ${styles.technicalSection}`}
@@ -241,8 +360,11 @@ export default function LunarSpaceTapesEPK() {
                 </a>
             </section>
 
+            {/* DOWNLOADABLE EPK */}
+
             <section className={styles.section}>
                 <h2>Electronic Press Kit</h2>
+
                 <a
                     href="/lunarspacetapes/epk.pdf"
                     download="Lunar-Space-Tapes-EPK.pdf"
@@ -251,6 +373,8 @@ export default function LunarSpaceTapesEPK() {
                     {t.downloadEPK}
                 </a>
             </section>
+
+            {/* BOOKING CONTACT */}
 
             <footer className={styles.footer}>
                 <h2>{t.bookingContact}</h2>
@@ -274,13 +398,15 @@ export default function LunarSpaceTapesEPK() {
                 </p>
             </footer>
 
-            {videoOpen && (
+            {/* VIDEO LIGHTBOX */}
+
+            {activeVideo && (
                 <div
                     className={styles.lightbox}
                     role="dialog"
                     aria-modal="true"
                     aria-label={t.videoDialog}
-                    onClick={() => setVideoOpen(false)}
+                    onClick={() => setSelectedVideo(null)}
                 >
                     <div
                         className={styles.lightboxContent}
@@ -292,7 +418,7 @@ export default function LunarSpaceTapesEPK() {
                             type="button"
                             className={styles.closeButton}
                             onClick={() =>
-                                setVideoOpen(false)
+                                setSelectedVideo(null)
                             }
                             aria-label={t.closeVideo}
                         >
@@ -300,8 +426,9 @@ export default function LunarSpaceTapesEPK() {
                         </button>
 
                         <iframe
-                            src="https://www.youtube.com/embed/z4UvI-4D9dk?autoplay=1&rel=0"
-                            title="Lunar Space Tapes — You and I"
+                            key={activeVideo.id}
+                            src={`https://www.youtube.com/embed/${activeVideo.id}?autoplay=1&rel=0`}
+                            title={`Lunar Space Tapes — ${activeVideo.title}`}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"
                             allowFullScreen
