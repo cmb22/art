@@ -1,6 +1,7 @@
+
 export const translations = {
     en: {
-        bio: "Lunar Space Tapes is a psychedelic rock trio from Berlin, combining melodic songwriting, spacey guitars, hypnotic grooves and improvisation. Rooted in late-60s psychedelia but built around spontaneous live interplay, the band moves between tightly written songs and extended journeys into outer space.",
+        bio: "Lunar Space Tapes is a psychedelic rock trio from Berlin, combining distinctive melodic songwriting with spacey guitars, hypnotic grooves and the freedom of improvisation. Rooted in the experimental psychedelia of the late 1960s, the band moves between unconventional song structures, psychedelic soundscapes and extended improvisations.\n\nThe band's music draws on a diverse range of musical experiences – from drummer Stefan Meinking's work with psychedelic and progressive rock band Coogans Bluff to singer and guitarist Chris M Blyth's international projects, including his collaboration with three-time Australian bluegrass guitar champion Andrew Clermont.\n\nOn stage, Lunar Space Tapes combine carefully crafted songs with the spontaneity and unpredictability of a tight-knit live band.",
         lineup: "Line-up",
         vocalsGuitar: "Vocals / Guitar",
         drums: "Drums",
@@ -19,7 +20,7 @@ export const translations = {
     },
 
     de: {
-        bio: "Lunar Space Tapes ist ein Psychedelic-Rock-Trio aus Berlin, das melodisches Songwriting mit spacigen Gitarren, hypnotischen Grooves und Improvisation verbindet. Verwurzelt in der Psychedelia der späten 60er, aber geprägt vom spontanen Zusammenspiel auf der Bühne, bewegt sich die Band zwischen ausgearbeiteten Songs und ausgedehnten Reisen ins Weltall.",
+        bio: "Lunar Space Tapes ist ein Psychedelic-Rock-Trio aus Berlin, das eigenwilliges, melodisches Songwriting mit spacigen Gitarren, hypnotischen Grooves und improvisatorischer Freiheit verbindet. Verwurzelt in der experimentellen Psychedelia der späten 60er-Jahre, bewegt sich die Band zwischen ungewöhnlichen Songstrukturen, psychedelischen Klanglandschaften und ausgedehnten Improvisationen.\n\nIn die Musik fließen unterschiedliche musikalische Erfahrungen ein – von Schlagzeuger Stefan Meinkings Arbeit mit der Psychedelic- und Progressive-Rock-Band Coogans Bluff bis zu den internationalen Projekten von Sänger und Gitarrist Chris M Blyth, darunter die Zusammenarbeit mit dem dreifachen australischen Bluegrass-Gitarrenmeister Andrew Clermont.\n\nAuf der Bühne verbinden Lunar Space Tapes ausgearbeitetes Songwriting mit der Spontaneität und Unberechenbarkeit einer eingespielten Live-Band.",
         lineup: "Besetzung",
         vocalsGuitar: "Gesang / Gitarre",
         drums: "Schlagzeug",
@@ -38,7 +39,7 @@ export const translations = {
     },
 
     fr: {
-        bio: "Lunar Space Tapes est un trio de rock psychédélique berlinois, mêlant compositions mélodiques, guitares planantes, grooves hypnotiques et improvisation. Ancré dans le psychédélisme de la fin des années soixante tout en privilégiant l’interaction spontanée sur scène, le groupe navigue entre morceaux soigneusement construits et longues excursions dans l’espace.",
+        bio: "Lunar Space Tapes est un trio de rock psychédélique berlinois qui mêle compositions mélodiques originales, guitares planantes, grooves hypnotiques et liberté d'improvisation. Ancré dans le psychédélisme expérimental de la fin des années 1960, le groupe explore des structures musicales inhabituelles, des paysages sonores psychédéliques et de longues improvisations.\n\nLa musique du trio se nourrit d'expériences musicales variées, allant du travail du batteur Stefan Meinking avec le groupe de rock psychédélique et progressif Coogans Bluff aux projets internationaux du chanteur et guitariste Chris M Blyth, notamment sa collaboration avec Andrew Clermont, triple champion australien de guitare bluegrass.\n\nSur scène, Lunar Space Tapes associe des compositions soigneusement élaborées à la spontanéité et à l'imprévisibilité d'un groupe soudé.",
         lineup: "Formation",
         vocalsGuitar: "Chant / Guitare",
         drums: "Batterie",
